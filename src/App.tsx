@@ -10,7 +10,13 @@ import TechnologyTab from './components/TechnologyTab';
 import SourcesTab from './components/SourcesTab';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState('overview');
+  const [activeTab, setActiveTab] = useState(() => {
+    // Read hash on initial load
+    const hash = window.location.hash.slice(1); // Remove #
+    const validTabs = ['overview', 'clinical-trials', 'patients', 'controversies', 'circumstantial', 'austin-facility', 'technology', 'sources'];
+    return validTabs.includes(hash) ? hash : 'overview';
+  });
+  
   const [darkMode, setDarkMode] = useState(() => {
     // Check localStorage first
     const saved = localStorage.getItem('darkMode');
@@ -31,11 +37,30 @@ export default function App() {
     localStorage.setItem('darkMode', String(darkMode));
   }, [darkMode]);
 
+  // Update hash when tab changes
+  useEffect(() => {
+    window.location.hash = activeTab;
+  }, [activeTab]);
+
+  // Listen for hash changes (browser back/forward)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1);
+      const validTabs = ['overview', 'clinical-trials', 'patients', 'controversies', 'circumstantial', 'austin-facility', 'technology', 'sources'];
+      if (validTabs.includes(hash)) {
+        setActiveTab(hash);
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   const renderTabContent = () => {
     switch (activeTab) {
       case 'overview':
         return <OverviewTab onTabChange={setActiveTab} />;
-      case 'trials':
+      case 'clinical-trials':
         return <TrialsTab />;
       case 'patients':
         return <PatientsTab />;
@@ -81,6 +106,7 @@ export default function App() {
                 onClick={() => setDarkMode(!darkMode)}
                 className="theme-toggle"
                 aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                aria-pressed={darkMode}
                 title={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
               >
                 {darkMode ? (
@@ -110,7 +136,7 @@ export default function App() {
       <TabNavigation activeTab={activeTab} onTabChange={setActiveTab} />
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 scroll-mt-20">
         {renderTabContent()}
       </main>
 

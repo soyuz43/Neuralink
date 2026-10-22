@@ -29,22 +29,26 @@
   --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
   --font-serif: 'Source Serif 4', 'Georgia', serif;
   
-  /* Shadows */
-  --shadow-base: 6px 6px 0px 0px var(--color-ink);
-  --shadow-hover: 8px 8px 0px 0px var(--color-ink);
-  --shadow-small: 3px 3px 0px 0px var(--color-ink);
+  /* Shadows - Light Mode (black) */
+  --shadow-base: 6px 6px 0px 0px #111111;
+  --shadow-hover: 8px 8px 0px 0px #111111;
+  --shadow-active: 0px 0px 0px 0px #111111;
+  --shadow-small: 3px 3px 0px 0px #111111;
+  
+  /* Light mode borders */
+  --color-border: #111111;
 }
 
 /* Dark Mode - System Preference */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-desk: #121212;
+    --color-desk: #0d0d0d;
     --color-desk-dark: #1a1a1a;
-    --color-paper: #1e1e1e;
-    --color-paper-white: #252525;
+    --color-paper: #1f1f1f;
+    --color-paper-white: #2a2a2a;
     --color-ink: #e6e4df;
     --color-ink-light: #d0ccc7;
-    --color-ink-muted: #999999;
+    --color-ink-muted: #9a9a9a;
     --color-accent-red: #ff4d4d;
     --color-accent-red-light: #ff6666;
     --color-accent-blue: #4da6ff;
@@ -56,21 +60,25 @@
     --color-unverified-bg: #2e1a1a;
     --color-warning: #fbbf24;
     --color-warning-bg: #2e2a1a;
-    --shadow-base: 6px 6px 0px 0px #000000;
-    --shadow-hover: 8px 8px 0px 0px #000000;
-    --shadow-small: 3px 3px 0px 0px #000000;
+    /* Stacked sheet shadow - lighter gray for depth */
+    --shadow-base: 6px 6px 0px 0px #3a3a3a;
+    --shadow-hover: 9px 9px 0px 0px #3a3a3a;
+    --shadow-active: 0px 0px 0px 0px #3a3a3a;
+    --shadow-small: 3px 3px 0px 0px #3a3a3a;
+    /* Dark mode borders */
+    --color-border: #b8b8b8;
   }
 }
 
 /* Dark Mode - Manual Toggle */
 .dark {
-  --color-desk: #121212;
+  --color-desk: #0d0d0d;
   --color-desk-dark: #1a1a1a;
-  --color-paper: #1e1e1e;
-  --color-paper-white: #252525;
+  --color-paper: #1f1f1f;
+  --color-paper-white: #2a2a2a;
   --color-ink: #e6e4df;
   --color-ink-light: #d0ccc7;
-  --color-ink-muted: #999999;
+  --color-ink-muted: #9a9a9a;
   --color-accent-red: #ff4d4d;
   --color-accent-red-light: #ff6666;
   --color-accent-blue: #4da6ff;
@@ -82,9 +90,13 @@
   --color-unverified-bg: #2e1a1a;
   --color-warning: #fbbf24;
   --color-warning-bg: #2e2a1a;
-  --shadow-base: 6px 6px 0px 0px #000000;
-  --shadow-hover: 8px 8px 0px 0px #000000;
-  --shadow-small: 3px 3px 0px 0px #000000;
+  /* Stacked sheet shadow - lighter gray for depth */
+  --shadow-base: 6px 6px 0px 0px #3a3a3a;
+  --shadow-hover: 9px 9px 0px 0px #3a3a3a;
+  --shadow-active: 0px 0px 0px 0px #3a3a3a;
+  --shadow-small: 3px 3px 0px 0px #3a3a3a;
+  /* Dark mode borders */
+  --color-border: #b8b8b8;
 }
 
 /* ============================================
@@ -174,7 +186,7 @@ code, .mono, .metadata, .status-badge, .source-link {
 
 .dossier-card {
   background-color: var(--color-paper);
-  border: 1.5px solid var(--color-ink);
+  border: 1.5px solid var(--color-border);
   box-shadow: var(--shadow-base);
   padding: 1.5rem;
   transition: all 0.15s ease-out;
@@ -183,6 +195,11 @@ code, .mono, .metadata, .status-badge, .source-link {
 .dossier-card:hover {
   transform: translate(-2px, -2px);
   box-shadow: var(--shadow-hover);
+}
+
+.dossier-card:active {
+  transform: translate(0px, 0px);
+  box-shadow: var(--shadow-active);
 }
 
 .dossier-card--white {
@@ -272,7 +289,9 @@ code, .mono, .metadata, .status-badge, .source-link {
   text-decoration: none;
   border-bottom: 1px solid var(--color-accent-blue);
   padding-bottom: 1px;
-  word-break: break-word;
+  word-break: break-all;
+  overflow-wrap: break-word;
+  min-height: 44px;
   transition: all 0.1s ease-out;
 }
 
@@ -617,11 +636,7 @@ a,
   min-height: 44px;
 }
 
-/* Link overflow handling */
-.source-link {
-  word-break: break-all;
-  overflow-wrap: break-word;
-}
+
 
 /* ============================================
    HAMBURGER MENU (Mobile < 768px)
@@ -824,8 +839,8 @@ a,
    RESPONSIVE MEDIA QUERIES
    ============================================ */
 
-/* Mobile: < 768px */
-@media (max-width: 767px) {
+/* Tablet: 768px - 1024px (hamburger mode) */
+@media (max-width: 1024px) {
   /* Show hamburger, hide desktop nav */
   .hamburger-btn {
     display: flex;
@@ -846,7 +861,7 @@ a,
     margin-bottom: 1rem;
   }
   
-  /* Stack grids on mobile */
+  /* Stack grids on tablet */
   .grid {
     gap: 1rem;
   }
@@ -856,7 +871,7 @@ a,
     min-height: 44px;
   }
   
-  /* Reduce modal padding on mobile */
+  /* Reduce modal padding on tablet */
   .modal-body {
     padding: 1rem;
   }
@@ -873,6 +888,21 @@ a,
   /* Reduce interactive card padding */
   .interactive-card {
     padding: 0.75rem;
+  }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+  /* Additional mobile-specific styles */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Stat strip responsive */
+  .stat-strip {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
 }
 

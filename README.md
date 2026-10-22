@@ -117,6 +117,7 @@ Technical documentation of Neuralink's BCI systems:
 - R1 surgical robot capabilities
 - Speech decoding pipeline
 - Performance metrics and limitations
+- "Black Box" transparency critique (decoder architecture opacity, Word Error Rate concerns)
 
 ### Sources
 Comprehensive reference database:
@@ -138,18 +139,22 @@ Comprehensive reference database:
 ### Design System
 The interface employs an archival brutalist aesthetic with the following characteristics:
 - Zero border-radius on all elements (sharp corners)
-- Hard shadow system for tactile depth perception
+- Hard shadow system for tactile depth perception with "stacked sheet" model in dark mode
 - Monospace typography (IBM Plex Mono) for headers and metadata
 - Serif typography (Source Serif 4) for body text
-- High-contrast color palette with dark mode support
-- Responsive design with mobile hamburger navigation
+- High-contrast color palette with dark mode support (system preference + manual toggle)
+- Responsive design with hamburger navigation (<1024px) and "More" dropdown for overflow
 - Accessibility-compliant touch targets (44px minimum)
+- Fluid typography scaling with clamp() for optimal readability across devices
 
 ### Key Features
-- **Dark Mode:** System preference detection with manual override
-- **Responsive Navigation:** Hamburger menu for mobile, "More" dropdown for overflow
-- **Interactive Elements:** Clickable statistics, modal dialogs, source linking
-- **Accessibility:** WCAG AA compliant contrast ratios, keyboard navigation, ARIA labels
+- **Dark Mode:** System preference detection with manual override, "stacked sheet" depth model with layered shadows
+- **Responsive Navigation:** Hamburger menu for tablet/mobile (<1024px), "More" dropdown for overflow on desktop
+- **Hash Routing:** Deep-linkable sections (#overview, #clinical-trials, #patients, etc.) with browser history support
+- **Interactive Elements:** Clickable statistics, modal dialogs, source linking, direct GoFundMe links
+- **Accessibility:** WCAG AA compliant contrast ratios, keyboard navigation, ARIA labels, 44px touch targets
+- **Typography:** Fluid scaling with clamp(), optimized font loading via HTML <link>
+- **Mobile Optimization:** Responsive grids, word-break for long URLs, scroll-margin for sticky headers
 
 ---
 
@@ -338,4 +343,4 @@ This investigation builds upon the work of numerous journalists, researchers, an
 
 **Last Updated:** 2026  
 **Investigation Status:** Active  
-**Documentation Version:** 2.0
+**Documentation Version:** 3.0
