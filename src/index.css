@@ -48,6 +48,16 @@ html {
   scroll-padding-top: 5rem;
 }
 
+/* Hide scrollbar for navigation tabs */
+nav .overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+
+nav .overflow-x-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 body {
   font-family: var(--font-serif);
   background-color: var(--color-desk);
