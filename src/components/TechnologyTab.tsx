@@ -146,6 +146,47 @@ export default function TechnologyTab() {
         </div>
       </Card>
 
+      {/* The Black Box Problem */}
+      <Card title="The 'Black Box' Decoding Problem: How Do We Know It's Real?" icon={<Icons.Warning size={24} />} variant="error">
+        <div className="space-y-4">
+          <div>
+            <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-accent-red)] mb-2">
+              The Representation Problem
+            </h4>
+            <p className="text-sm text-[var(--color-ink-light)] leading-relaxed">
+              A fundamental challenge in Brain-Computer Interfaces is the "Representation Problem." Because the brain encodes concepts like "Paris" not in single neurons, but in complex, distributed patterns of electrical activity, the system relies entirely on AI machine learning models to map these patterns to language.
+            </p>
+          </div>
+
+          <div className="divider" />
+
+          <div>
+            <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-accent-blue)] mb-2">
+              Open Research Standards
+            </h4>
+            <p className="text-sm text-[var(--color-ink-light)] leading-relaxed">
+              In open academic research (e.g., the <a href="https://braingate.org/" target="_blank" rel="noopener noreferrer" className="source-link">BrainGate consortium</a>), this mapping is validated through rigorous, published cross-validation protocols to ensure the AI is learning true neural representations, not spurious correlations or relying on heavy "autocorrect" algorithms that mask poor neural signal quality.
+            </p>
+          </div>
+
+          <div className="divider" />
+
+          <div>
+            <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-accent-red)] mb-2">
+              The Transparency Gap
+            </h4>
+            <p className="text-sm text-[var(--color-ink-light)] leading-relaxed mb-3">
+              Neuralink has not published peer-reviewed papers detailing their decoder architecture, calibration protocols, or unassisted Word Error Rates (WER). Without this data, it is impossible for the independent scientific community to verify whether the advertised "11.32 bits per second" represents pure, high-fidelity neural decoding, or if it is heavily augmented by predictive AI models.
+            </p>
+            <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-unverified-bg)] border-l-4 border-l-[var(--color-accent-red)]">
+              <p className="text-sm text-[var(--color-ink)] leading-relaxed font-semibold">
+                In experimental brain surgery, opacity is not a business strategy; it is a bioethical risk.
+              </p>
+            </div>
+          </div>
+        </div>
+      </Card>
+
       {/* Roadmap */}
       <Card title="Future Roadmap (Per Neuralink)" icon={<Icons.ArrowRight size={24} />}>
         <div className="dossier-card dossier-card--compact dossier-card--no-hover">
