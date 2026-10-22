@@ -122,6 +122,138 @@ export default function ControversiesTab() {
         </div>
       </Card>
 
+      {/* Patient 1 Hardware Failure */}
+      <Card title="Patient 1: Hardware Failure & Transparency Concerns" icon={<Icons.Warning size={24} />} variant="error">
+        <div className="disclaimer-box mb-4">
+          <div className="disclaimer-box__title">Critical Incident</div>
+          <div className="disclaimer-box__text">
+            Neuralink's first human trial participant experienced catastrophic hardware failure within weeks of implantation. 
+            The company delayed public disclosure for four months and has not published peer-reviewed analysis of the incident.
+          </div>
+        </div>
+
+        <div className="dossier-card dossier-card--compact dossier-card--no-hover mb-4">
+          <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-3">
+            Incident Timeline
+          </h4>
+          <div className="grid md:grid-cols-2 gap-3 text-sm">
+            <div className="metadata-row">
+              <span className="metadata-row__label">Patient</span>
+              <span className="metadata-row__value">
+                <a href="https://en.wikipedia.org/wiki/Noland_Arbaugh" target="_blank" rel="noopener noreferrer" className="source-link">Noland Arbaugh</a>
+              </span>
+            </div>
+            <div className="metadata-row">
+              <span className="metadata-row__label">Implant Date</span>
+              <span className="metadata-row__value">January 2024</span>
+            </div>
+            <div className="metadata-row">
+              <span className="metadata-row__label">Failure Detected</span>
+              <span className="metadata-row__value">~1 month post-surgery</span>
+            </div>
+            <div className="metadata-row">
+              <span className="metadata-row__label">Thread Retraction</span>
+              <span className="metadata-row__value text-[var(--color-accent-red)] font-bold">85%</span>
+            </div>
+            <div className="metadata-row">
+              <span className="metadata-row__label">Public Disclosure</span>
+              <span className="metadata-row__value text-[var(--color-accent-red)]">May 8, 2024</span>
+            </div>
+            <div className="metadata-row">
+              <span className="metadata-row__label">Reporting Delay</span>
+              <span className="metadata-row__value text-[var(--color-accent-red)] font-bold">4 months</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="dossier-card dossier-card--compact dossier-card--no-hover mb-4">
+          <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-accent-red)] mb-2">
+            What Happened
+          </h4>
+          <p className="text-sm text-[var(--color-ink-light)] mb-3">
+            Approximately one month after receiving the Neuralink N1 implant, Arbaugh lost significant device functionality. 
+            Neuralink determined that <strong className="text-[var(--color-ink)]">85% of the implant's electrode threads had retracted</strong> from 
+            their original positions in the motor cortex.
+          </p>
+          <p className="text-sm text-[var(--color-ink-light)]">
+            Neuralink reportedly restored partial functionality through software adjustments to amplify signals from the remaining 
+            threads. However, the company did not publicly disclose this major hardware failure until May 8, 2024—four months after 
+            the incident occurred.
+          </p>
+        </div>
+
+        <div>
+          <h4 className="text-mono text-sm uppercase tracking-[0.05em] text-[var(--color-ink)] mb-3">
+            Transparency & Safety Concerns
+          </h4>
+          <div className="space-y-3">
+            <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-unverified-bg)]">
+              <div className="text-mono text-xs font-bold text-[var(--color-accent-red)] uppercase tracking-[0.05em] mb-1">
+                01 // Delayed Reporting
+              </div>
+              <div className="text-xs text-[var(--color-ink-light)]">
+                Neuralink waited four months to publicly disclose a catastrophic hardware failure in their first human trial. 
+                This raises questions about whether the incident was reported to the FDA as an adverse device event under 21 CFR 312.32.
+              </div>
+            </div>
+            <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-unverified-bg)]">
+              <div className="text-mono text-xs font-bold text-[var(--color-accent-red)] uppercase tracking-[0.05em] mb-1">
+                02 // No Peer-Reviewed Analysis
+              </div>
+              <div className="text-xs text-[var(--color-ink-light)]">
+                As of the Scientific American article's publication, Neuralink had not released a formal scientific report or 
+                peer-reviewed publication explaining what caused the thread retraction, how much functionality was lost, 
+                or whether the remaining threads were stable.
+              </div>
+            </div>
+            <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-unverified-bg)]">
+              <div className="text-mono text-xs font-bold text-[var(--color-accent-red)] uppercase tracking-[0.05em] mb-1">
+                03 // Regulatory Approval to Continue
+              </div>
+              <div className="text-xs text-[var(--color-ink-light)]">
+                Despite this failure, the FDA allowed Neuralink to proceed with a second implant. Neuralink announced plans to 
+                implant future threads deeper (approximately 8mm versus 3-5mm in Arbaugh's case), but has not publicly explained 
+                the safety rationale for this change.
+              </div>
+            </div>
+            <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-warning-bg)]">
+              <div className="text-mono text-xs font-bold text-[var(--color-warning)] uppercase tracking-[0.05em] mb-1">
+                04 // Unanswered Questions
+              </div>
+              <div className="text-xs text-[var(--color-ink-light)]">
+                Scientific American reported that Neuralink did not respond to questions about the retraction. Critical unknowns include: 
+                long-term risks of intracortical hardware migration, inflammation, infection, or explantation; battery and thermal safety; 
+                Bluetooth and neural-data security; and whether independent scientists validated Neuralink's analysis.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="dossier-card dossier-card--compact dossier-card--no-hover mt-4">
+          <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-2">
+            Primary Sources
+          </h4>
+          <div className="space-y-2">
+            <SourceLink 
+              url="https://www.scientificamerican.com/article/neuralinks-first-user-describes-life-with-elon-musks-brain-chip/"
+              title="Scientific American: What It's Like to Live with a Brain Chip, According to Neuralink's First User (June 7, 2024)"
+            />
+            <SourceLink 
+              url="https://www.bloomberg.com/news/articles/2024-05-08/neuralink-says-implant-had-issues-after-first-human-surgery"
+              title="Bloomberg: Neuralink Says Implant Had Issues After First Human Surgery (May 8, 2024)"
+            />
+            <SourceLink 
+              url="https://www.cbsnews.com/news/elon-musk-neuralink-first-implant-problem/"
+              title="CBS News: Elon Musk's Neuralink first implant problem (May 2024)"
+            />
+            <SourceLink 
+              url="https://www.reuters.com/technology/musks-neuralink-has-faced-issues-with-its-tiny-wires-years-sources-say-2024-05-15/"
+              title="Reuters: Neuralink has faced issues with its tiny wires for years (May 15, 2024)"
+            />
+          </div>
+        </div>
+      </Card>
+
       {/* Animal Testing */}
       <Card title="Animal Testing: UC Davis Monkey Experiments" icon={<Icons.Warning size={24} />} variant="error">
         <p className="mb-4">
