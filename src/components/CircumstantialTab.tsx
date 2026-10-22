@@ -7,18 +7,17 @@ export default function CircumstantialTab() {
     <div className="space-y-6">
       {/* Disclaimer Banner */}
       <div className="disclaimer-box">
-        <div className="disclaimer-box__title">Circumstantial Evidence</div>
+        <div className="disclaimer-box__title">Circumstantial Evidence - No Direct Proof</div>
         <div className="disclaimer-box__text">
-          <strong>This section documents circumstantial connections only.</strong> There is <strong>NO direct evidence</strong> that Neuralink has conducted or is conducting experiments on ICE detainees. 
-          The information below documents geographic proximity, timing correlations, and patterns that investigators have noted. 
-          These observations warrant scrutiny but do not constitute proof of wrongdoing.
+          <strong>There is NO direct evidence linking Neuralink to experiments on ICE detainees.</strong> This section documents circumstantial connections and patterns that investigators have noted, including geographic proximity, timing correlations, and regulatory changes. 
+          These observations warrant scrutiny and oversight but do not constitute proof of wrongdoing. Some initial claims have been investigated and found to be unsubstantiated.
         </div>
       </div>
 
       {/* Executive Summary */}
       <Card title="Executive Summary" icon={<Icons.Overview size={24} />} variant="warning">
         <p className="mb-4">
-          Recent investigative reporting has raised questions about the intersection of Elon Musk's Neuralink clinical trials, 
+          Recent investigative reporting has raised questions about the intersection of <a href="https://en.wikipedia.org/wiki/Elon_Musk" target="_blank" rel="noopener noreferrer" className="source-link">Elon Musk</a>'s Neuralink clinical trials, 
           federal regulatory oversight, and the U.S. immigration detention system. This section examines:
         </p>
         <ul className="space-y-2 text-sm">
@@ -175,9 +174,9 @@ export default function CircumstantialTab() {
 
       <Card title="4. ICE Transfers to Honolulu: FDC Honolulu" icon={<Icons.Warning size={24} />} variant="warning">
         <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-verified-bg)] mb-4">
-          <span className="status-badge status-badge--verified">✓ Verified</span>
+          <span className="status-badge status-badge--unsubstantiated">⚠ Unsubstantiated</span>
           <p className="text-sm text-[var(--color-ink-light)] mt-2">
-            ICE detainee transfers to Honolulu verified. NIR LLC claim debunked (see below).
+            ICE detainee transfers occurred, but NIR LLC shell company claim has been debunked (see below).
           </p>
         </div>
         <p className="text-sm text-[var(--color-ink-light)] mb-3">
@@ -193,7 +192,7 @@ export default function CircumstantialTab() {
             Initial reporting raised questions about Department of Defense contracts awarded to NIR LLC, suggesting it might 
             be an obscure shell company. However, verification through Hawaii state business registries and medical licensing 
             directories confirmed that <strong className="text-[var(--color-ink)]">NIR LLC is a legitimate professional billing 
-            entity for Dr. Felix L. Song, MD</strong>, a board-certified Interventional Neuroradiologist.
+            entity for <a href="https://drfsong.com/" target="_blank" rel="noopener noreferrer" className="source-link">Dr. Felix L. Song, MD</a></strong>, a board-certified Interventional Neuroradiologist practicing at multiple major Honolulu hospitals including Straub Medical Center and Tripler Army Medical Center.
           </p>
           <ul className="space-y-2 text-sm text-[var(--color-ink-light)] mb-3">
             <li className="flex items-start gap-2">

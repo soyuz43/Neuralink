@@ -189,6 +189,12 @@ code, .mono, .metadata, .status-badge, .source-link {
   border-color: var(--color-accent-blue);
 }
 
+.status-badge--unsubstantiated {
+  color: #7a5c00;
+  background-color: #f0ecd4;
+  border-color: #7a5c00;
+}
+
 /* ============================================
    COMPONENT: SOURCE LINK
    ============================================ */

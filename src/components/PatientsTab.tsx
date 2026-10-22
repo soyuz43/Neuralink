@@ -5,12 +5,13 @@ const patients = [
   {
     id: 1,
     name: 'Noland Arbaugh',
+    wikipediaUrl: 'https://en.wikipedia.org/wiki/Noland_Arbaugh',
     condition: 'SCI (Tetraplegia)',
     surgeryDate: 'January 2024',
     hospital: 'Barrow Neurological Institute',
     study: 'PRIME',
     status: 'Publicly active',
-    notes: 'First Neuralink patient. Experienced significant thread retraction (85% of threads) within weeks of implant. Neuralink stated software modifications improved performance, and by July 2024 the threads had become stable. Neuralink changed surgical procedures for subsequent patients. Limited public information since mid-2025.',
+    notes: 'First Neuralink patient, a 29-year-old quadriplegic who became the first human to receive a Neuralink brain implant in January 2024. Experienced significant thread retraction (85% of threads) within weeks of implant. Neuralink stated software modifications improved performance, and by July 2024 the threads had become stable. Neuralink changed surgical procedures for subsequent patients. Limited public information since mid-2025.',
     featured: true,
     sources: [
       { title: 'Neuralink: Two Years of Telepathy Updates', url: 'https://neuralink.com/updates/two-years-of-telepathy/' },
@@ -58,7 +59,7 @@ const patients = [
     hospital: 'Barrow Neurological Institute',
     study: 'PRIME',
     status: 'GoFundMe crisis',
-    notes: 'Featured in Neuralink promotional video discussing full-time work capability. Four months post-surgery (June 2025), a GoFundMe was created by gaming friend Ryan Biggs stating Mike was "not in a good place—mentally, financially, physically, or emotionally" and "ready to give up on life." Campaign raised over $21,000. Shivon Zilis (Neuralink Director of Operations) donated $3,000. Family has stated his absence from social media is due to ALS progression and privacy, not corporate cover-up. No public social media presence.',
+    notes: 'Featured in Neuralink promotional video discussing full-time work capability. Four months post-surgery (June 2025), a GoFundMe was created by gaming friend Ryan Biggs stating Mike was "not in a good place—mentally, financially, physically, or emotionally" and "ready to give up on life." Campaign raised over $21,000. <a href="https://en.wikipedia.org/wiki/Shivon_Zilis" target="_blank" rel="noopener noreferrer" className="source-link">Shivon Zilis</a> (Neuralink Director of Operations) donated $3,000. Family has stated his absence from social media is due to ALS progression and privacy, not corporate cover-up. No public social media presence.',
     featured: true,
     controversy: true,
     sources: [
@@ -234,7 +235,13 @@ export default function PatientsTab() {
                 </span>
                 <div>
                   <h3 className="text-mono text-lg uppercase tracking-[0.02em] text-[var(--color-ink)]">
-                    {patient.name}
+                    {patient.wikipediaUrl ? (
+                      <a href={patient.wikipediaUrl} target="_blank" rel="noopener noreferrer" className="source-link">
+                        {patient.name}
+                      </a>
+                    ) : (
+                      patient.name
+                    )}
                     {patient.controversy && (
                       <span className="ml-2 text-xs text-[var(--color-accent-red)] font-normal">
                         // Controversy
