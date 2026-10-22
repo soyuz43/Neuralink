@@ -54,6 +54,7 @@ export default function SourcesTab() {
         { title: 'Fortune: Neuralink former employees describe relentless pressure', url: 'https://fortune.com/2022/01/29/neuralink-elon-musk-brain-implant-startup-high-pressure-workplace/' },
         { title: 'CBS News: Neuralink first implant problem (thread retraction)', url: 'https://www.cbsnews.com/news/elon-musk-neuralink-first-implant-problem/' },
         { title: 'Bloomberg: Neuralink implant had issues after first human surgery', url: 'https://www.bloomberg.com/news/articles/2024-05-08/neuralink-says-implant-had-issues-after-first-human-surgery' },
+        { title: 'Scientific American: What It\'s Like to Live with a Brain Chip, According to Neuralink\'s First User', url: 'https://www.scientificamerican.com/article/neuralinks-first-user-describes-life-with-elon-musks-brain-chip/', description: 'Details 85% thread retraction in Patient 1, June 7, 2024' },
         { title: 'The Guardian: USDA inspector general escorted out after defying Trump order', url: 'https://www.theguardian.com/us-news/2025/jan/29/usda-inspector-general-phyllis-fong' },
         { title: 'Fortune: DOGE fired FDA employees overseeing Neuralink', url: 'https://fortune.com/2025/02/18/doge-fired-fda-employees-overseeing-elon-musk-neuralink/' },
         { title: 'Elon Musk X Post: First Human Implant Announcement (Jan 29, 2024)', url: 'https://x.com/elonmusk/status/1752098683024220632' },
