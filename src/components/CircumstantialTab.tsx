@@ -173,17 +173,77 @@ export default function CircumstantialTab() {
         </p>
       </Card>
 
-      <Card title="4. The Honolulu Pipeline: FDC Honolulu, NIR LLC" icon={<Icons.Warning size={24} />} variant="error">
-        <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-mixed-bg)] mb-4">
-          <span className="status-badge status-badge--mixed">⚠ Mixed (Verified Contracts | Speculative Link)</span>
+      <Card title="4. ICE Transfers to Honolulu: FDC Honolulu" icon={<Icons.Warning size={24} />} variant="warning">
+        <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-verified-bg)] mb-4">
+          <span className="status-badge status-badge--verified">✓ Verified</span>
           <p className="text-sm text-[var(--color-ink-light)] mt-2">
-            Contracts and transfers verified. Link to Neuralink is speculative.
+            ICE detainee transfers to Honolulu verified. NIR LLC claim debunked (see below).
           </p>
         </div>
-        <p className="text-sm text-[var(--color-ink-light)]">
-          ICE began transferring mainland detainees to FDC Honolulu in mid-2025. Concurrently, DoD awarded contracts for 
-          "neurological surgery procedures" to NIR LLC, an obscure Honolulu-based firm with no public web presence.
+        <p className="text-sm text-[var(--color-ink-light)] mb-3">
+          In mid-2025, ICE began transferring mainland detainees to the Federal Detention Center (FDC) in Honolulu, Hawaii. 
+          These transfers moved detainees approximately 4,500 miles from their original arrest locations, raising concerns 
+          about access to legal representation and oversight.
         </p>
+        <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[#e4ecf4]">
+          <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-accent-blue)] mb-2">
+            NIR LLC Claim: Debunked
+          </h4>
+          <p className="text-sm text-[var(--color-ink-light)] mb-3">
+            Initial reporting raised questions about Department of Defense contracts awarded to NIR LLC, suggesting it might 
+            be an obscure shell company. However, verification through Hawaii state business registries and medical licensing 
+            directories confirmed that <strong className="text-[var(--color-ink)]">NIR LLC is a legitimate professional billing 
+            entity for Dr. Felix L. Song, MD</strong>, a board-certified Interventional Neuroradiologist.
+          </p>
+          <ul className="space-y-2 text-sm text-[var(--color-ink-light)] mb-3">
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--color-accent-blue)] font-bold text-mono">01</span>
+              <div>
+                <strong className="text-[var(--color-ink)]">Identified Physician:</strong> Dr. Felix L. Song, MD - Board-certified 
+                Interventional Neuroradiologist
+              </div>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--color-accent-blue)] font-bold text-mono">02</span>
+              <div>
+                <strong className="text-[var(--color-ink)]">Practice Locations:</strong> Straub Medical Center, Tripler Army 
+                Medical Center, Queens Medical Center, Kaiser Permanente, Kapiolani Medical Center
+              </div>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--color-accent-blue)] font-bold text-mono">03</span>
+              <div>
+                <strong className="text-[var(--color-ink)]">Contract Scope:</strong> Standard neurointerventional services 
+                (angiography, stroke response) - not experimental research
+              </div>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--color-accent-blue)] font-bold text-mono">04</span>
+              <div>
+                <strong className="text-[var(--color-ink)]">Registration:</strong> Active with State of Hawaii since May 2005 
+                (20+ years)
+              </div>
+            </li>
+          </ul>
+          <div className="divider" />
+          <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-2">
+            Verification Sources
+          </h4>
+          <div className="space-y-2">
+            <SourceLink 
+              url="https://hbe.dcca.hawaii.gov/search-and-buy?searchTerm=nir+llc&entityId=001t000000FJQTNAA5"
+              title="Hawaii DCCA Business Registry (NIR, LLC)"
+            />
+            <SourceLink 
+              url="https://govtribe.com/vendors/nir-llc-43rs4"
+              title="GovTribe NIR LLC Federal Contractor Profile"
+            />
+            <SourceLink 
+              url="https://drfsong.com/"
+              title="Dr. Felix L. Song, MD Practice Website"
+            />
+          </div>
+        </div>
       </Card>
 
       <Card title="5. Regulatory Capture: DOGE and the FDA Firings" icon={<Icons.Warning size={24} />} variant="error">
