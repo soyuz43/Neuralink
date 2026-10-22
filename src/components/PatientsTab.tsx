@@ -1,4 +1,5 @@
 import Card from './Card';
+import { Icons } from './Icons';
 
 const patients = [
   {
@@ -165,83 +166,84 @@ export default function PatientsTab() {
   return (
     <div className="space-y-6">
       {/* Summary */}
-      <Card title="Patient Registry Overview" icon="📊">
+      <Card title="Patient Registry Overview" icon={<Icons.Patients size={24} />}>
         <p className="mb-4">
-          As of 2026, Neuralink has implanted <strong className="text-white">27+ patients</strong> across 
-          clinical trials. Of these, <strong className="text-white">{publicPatients.length}</strong> have been 
-          publicly identified by name. <strong className="text-amber-400">{undisclosedCount} patients</strong> have 
+          As of 2026, Neuralink has implanted <strong className="text-[var(--color-ink)]">27+ patients</strong> across 
+          clinical trials. Of these, <strong className="text-[var(--color-ink)]">{publicPatients.length}</strong> have been 
+          publicly identified by name. <strong className="text-[var(--color-accent-red)]">{undisclosedCount} patients</strong> have 
           no public information beyond Neuralink's count.
         </p>
-        <div className="bg-amber-900/20 border border-amber-800/30 rounded-lg p-4">
-          <p className="text-sm text-amber-200/80">
-            <strong>Transparency Concern:</strong> The inconsistent disclosure of patient information—sometimes 
-            same-day, sometimes months later, sometimes never—creates a skewed public narrative where we 
-            primarily hear about successes.
-          </p>
+        <div className="disclaimer-box">
+          <div className="disclaimer-box__title">Transparency Concern</div>
+          <div className="disclaimer-box__text">
+            The inconsistent disclosure of patient information—sometimes same-day, sometimes months later, 
+            sometimes never—creates a skewed public narrative where we primarily hear about successes.
+          </div>
         </div>
       </Card>
 
       {/* Patient List */}
       <div className="space-y-4">
         {patients.map((patient) => (
-          <Card
+          <div
             key={patient.id}
-            variant={patient.controversy ? 'error' : patient.featured ? 'info' : 'default'}
+            className={`dossier-card ${patient.controversy ? 'bg-[var(--color-unverified-bg)]' : ''}`}
           >
             <div className="flex items-start justify-between mb-3">
               <div className="flex items-center gap-3">
-                <span className="text-xs font-mono text-gray-500 bg-gray-800 px-2 py-1 rounded">
+                <span className="text-mono text-xs text-[var(--color-ink-muted)] bg-[var(--color-desk)] px-2 py-1 border border-[var(--color-ink)]">
                   P{patient.id}
                 </span>
                 <div>
-                  <h3 className="font-bold text-white text-lg">
+                  <h3 className="text-mono text-lg uppercase tracking-[0.02em] text-[var(--color-ink)]">
                     {patient.name}
                     {patient.controversy && (
-                      <span className="ml-2 text-xs text-red-400 font-normal">⚠️ Controversy</span>
+                      <span className="ml-2 text-xs text-[var(--color-accent-red)] font-normal">
+                        // Controversy
+                      </span>
                     )}
                   </h3>
-                  <p className="text-sm text-gray-400">{patient.condition}</p>
+                  <p className="text-sm text-[var(--color-ink-muted)]">{patient.condition}</p>
                 </div>
               </div>
-              <span className="text-xs text-gray-500">{patient.surgeryDate}</span>
+              <span className="text-mono text-xs text-[var(--color-ink-muted)]">{patient.surgeryDate}</span>
             </div>
 
             <div className="grid md:grid-cols-2 gap-3 text-sm mb-3">
-              <div>
-                <span className="text-gray-500">Hospital:</span>{' '}
-                <span className="text-gray-300">{patient.hospital}</span>
+              <div className="metadata-row">
+                <span className="metadata-row__label">Hospital</span>
+                <span className="metadata-row__value">{patient.hospital}</span>
               </div>
-              <div>
-                <span className="text-gray-500">Study:</span>{' '}
-                <span className={`font-mono text-xs px-2 py-0.5 rounded ${
-                  patient.study === 'VOICE' ? 'bg-purple-500/10 text-purple-400' : 'bg-blue-500/10 text-blue-400'
-                }`}>
+              <div className="metadata-row">
+                <span className="metadata-row__label">Study</span>
+                <span className={`status-badge text-xs ${patient.study === 'VOICE' ? 'status-badge--mixed' : 'status-badge--neutral'}`}>
                   {patient.study}
                 </span>
               </div>
-              <div>
-                <span className="text-gray-500">Status:</span>{' '}
-                <span className="text-gray-300">{patient.status}</span>
+              <div className="metadata-row">
+                <span className="metadata-row__label">Status</span>
+                <span className="metadata-row__value">{patient.status}</span>
               </div>
             </div>
 
             {patient.notes && (
-              <div className="pt-3 mt-3 border-t border-gray-700/50">
-                <p className="text-sm text-gray-400">{patient.notes}</p>
-              </div>
+              <div className="divider" />
             )}
-          </Card>
+            {patient.notes && (
+              <p className="text-sm text-[var(--color-ink-light)]">{patient.notes}</p>
+            )}
+          </div>
         ))}
       </div>
 
       {/* Undisclosed Patients */}
-      <Card title="Undisclosed Patients" icon="🔒" variant="warning">
+      <Card title="Undisclosed Patients" icon={<Icons.Warning size={24} />} variant="warning">
         <p className="mb-3">
-          <strong className="text-amber-400">{undisclosedCount} patients</strong> have been implanted 
+          <strong className="text-[var(--color-accent-red)]">{undisclosedCount} patients</strong> have been implanted 
           but have no public information beyond Neuralink's count. Their names, conditions, hospitals, 
           and outcomes remain unknown.
         </p>
-        <p className="text-sm text-gray-400">
+        <p className="text-sm text-[var(--color-ink-muted)]">
           This lack of transparency makes it impossible to track outcomes or identify patterns of 
           complications. Patients who aren't posting could be fine and private, or they could be in 
           crisis with no systematic tracking.

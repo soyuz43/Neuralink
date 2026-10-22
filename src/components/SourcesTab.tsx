@@ -1,4 +1,6 @@
 import Card from './Card';
+import SourceLink from './SourceLink';
+import { Icons } from './Icons';
 
 export default function SourcesTab() {
   const sources = [
@@ -135,7 +137,7 @@ export default function SourcesTab() {
 
   return (
     <div className="space-y-6">
-      <Card title="Sources & References" icon="📚">
+      <Card title="Sources & References" icon={<Icons.Sources size={24} />}>
         <p className="mb-4">
           All information on this page is compiled from publicly available sources including news reports, 
           clinical trial registries, academic publications, investigative journalism, and official company 
@@ -144,69 +146,58 @@ export default function SourcesTab() {
       </Card>
 
       {sources.map((group) => (
-        <Card key={group.category} title={group.category} icon="🔗">
+        <Card key={group.category} title={group.category} icon={<Icons.Document size={20} />}>
           {group.description && (
-            <p className="text-xs text-gray-500 mb-3 italic">{group.description}</p>
+            <p className="text-xs text-[var(--color-ink-muted)] italic mb-3">{group.description}</p>
           )}
-          <ul className="space-y-2">
+          <div className="space-y-2">
             {group.links.map((link, i) => (
-              <li key={i}>
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-start gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
-                >
-                  <span className="text-gray-600 group-hover:text-blue-400 mt-0.5">↗</span>
-                  <div>
-                    <span className="group-hover:underline">{link.title}</span>
-                    {link.description && (
-                      <span className="block text-xs text-gray-500 mt-0.5">{link.description}</span>
-                    )}
-                  </div>
-                </a>
-              </li>
+              <SourceLink key={i} url={link.url} title={link.title} description={link.description} />
             ))}
-          </ul>
+          </div>
         </Card>
       ))}
 
-      <Card title="About This Documentation" icon="ℹ️">
-        <p className="text-sm text-gray-400 leading-relaxed mb-4">
+      <Card title="About This Documentation" icon={<Icons.Overview size={24} />}>
+        <p className="text-sm text-[var(--color-ink-light)] leading-relaxed mb-4">
           This site was created to document and analyze the publicly available information about 
           Neuralink's clinical trials, with particular focus on:
         </p>
-        <ul className="space-y-2 text-sm text-gray-400">
+        <ul className="space-y-2 text-sm text-[var(--color-ink-light)]">
           <li className="flex items-start gap-2">
-            <span className="text-amber-400">•</span>
+            <span className="text-[var(--color-accent-red)]">•</span>
             <span>The UAE-PRIME speech trial at Cleveland Clinic Abu Dhabi and its regulatory implications</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-amber-400">•</span>
+            <span className="text-[var(--color-accent-red)]">•</span>
             <span>The VOICE trial at UT Southwestern Medical Center in Dallas, TX</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-amber-400">•</span>
+            <span className="text-[var(--color-accent-red)]">•</span>
             <span>The speech cortex surgery procedures and associated risks</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-amber-400">•</span>
+            <span className="text-[var(--color-accent-red)]">•</span>
             <span>The FDA regulatory history and ethical concerns</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-amber-400">•</span>
+            <span className="text-[var(--color-accent-red)]">•</span>
             <span>The Patient 4 / Mike Melgarejo GoFundMe situation and Shivon Zilis donation</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-amber-400">•</span>
+            <span className="text-[var(--color-accent-red)]">•</span>
             <span>Animal testing at UC Davis (15 of 23 monkeys died)</span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="text-amber-400">•</span>
+            <span className="text-[var(--color-accent-red)]">•</span>
             <span>Tracking all known patients and their public disclosure status</span>
           </li>
+          <li className="flex items-start gap-2">
+            <span className="text-[var(--color-accent-red)]">•</span>
+            <span>Geographic patterns and ICE detention facility connections (The Drey Dossier investigation)</span>
+          </li>
         </ul>
-        <p className="text-sm text-gray-500 mt-4">
+        <p className="text-sm text-[var(--color-ink-muted)] mt-4">
           This documentation is for informational and educational purposes only. It does not constitute 
           medical advice. Neuralink devices are investigational and have not been approved by the FDA 
           or other regulatory authorities.
