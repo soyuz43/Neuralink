@@ -177,7 +177,7 @@ export default function CircumstantialTab() {
         <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-verified-bg)] mb-4">
           <span className="status-badge status-badge--verified">✓ Verified</span>
           <p className="text-sm text-[var(--color-ink-light)] mt-2">
-            ICE detainee transfers to Honolulu verified. NIR LLC claim resolved (see addendum below).
+            ICE detainee transfers to Honolulu verified. NIR LLC claim debunked (see below).
           </p>
         </div>
         <p className="text-sm text-[var(--color-ink-light)] mb-3">
@@ -186,14 +186,63 @@ export default function CircumstantialTab() {
           about access to legal representation and oversight.
         </p>
         <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[#e4ecf4]">
-          <p className="text-sm text-[var(--color-ink-light)]">
-            <strong className="text-[var(--color-accent-blue)]">Note on NIR LLC:</strong> Initial reporting raised questions 
-            about Department of Defense contracts awarded to NIR LLC, a Honolulu-based entity. However, verification through 
-            Hawaii state business registries and medical licensing directories confirmed that NIR LLC is a legitimate 
-            professional billing entity for Dr. Felix L. Song, MD, a board-certified Interventional Neuroradiologist. 
-            The LLC has been registered since May 2005 and provides standard neurointerventional services to the military. 
-            See the <strong>Investigative Addendum</strong> below for full verification details and source links.
+          <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-accent-blue)] mb-2">
+            NIR LLC Claim: Debunked
+          </h4>
+          <p className="text-sm text-[var(--color-ink-light)] mb-3">
+            Initial reporting raised questions about Department of Defense contracts awarded to NIR LLC, suggesting it might 
+            be an obscure shell company. However, verification through Hawaii state business registries and medical licensing 
+            directories confirmed that <strong className="text-[var(--color-ink)]">NIR LLC is a legitimate professional billing 
+            entity for Dr. Felix L. Song, MD</strong>, a board-certified Interventional Neuroradiologist.
           </p>
+          <ul className="space-y-2 text-sm text-[var(--color-ink-light)] mb-3">
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--color-accent-blue)] font-bold text-mono">01</span>
+              <div>
+                <strong className="text-[var(--color-ink)]">Identified Physician:</strong> Dr. Felix L. Song, MD - Board-certified 
+                Interventional Neuroradiologist
+              </div>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--color-accent-blue)] font-bold text-mono">02</span>
+              <div>
+                <strong className="text-[var(--color-ink)]">Practice Locations:</strong> Straub Medical Center, Tripler Army 
+                Medical Center, Queens Medical Center, Kaiser Permanente, Kapiolani Medical Center
+              </div>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--color-accent-blue)] font-bold text-mono">03</span>
+              <div>
+                <strong className="text-[var(--color-ink)]">Contract Scope:</strong> Standard neurointerventional services 
+                (angiography, stroke response) - not experimental research
+              </div>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-[var(--color-accent-blue)] font-bold text-mono">04</span>
+              <div>
+                <strong className="text-[var(--color-ink)]">Registration:</strong> Active with State of Hawaii since May 2005 
+                (20+ years)
+              </div>
+            </li>
+          </ul>
+          <div className="divider" />
+          <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-2">
+            Verification Sources
+          </h4>
+          <div className="space-y-2">
+            <SourceLink 
+              url="https://hbe.dcca.hawaii.gov/search-and-buy?searchTerm=nir+llc&entityId=001t000000FJQTNAA5"
+              title="Hawaii DCCA Business Registry (NIR, LLC)"
+            />
+            <SourceLink 
+              url="https://govtribe.com/vendors/nir-llc-43rs4"
+              title="GovTribe NIR LLC Federal Contractor Profile"
+            />
+            <SourceLink 
+              url="https://drfsong.com/"
+              title="Dr. Felix L. Song, MD Practice Website"
+            />
+          </div>
         </div>
       </Card>
 
