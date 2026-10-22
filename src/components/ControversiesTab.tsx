@@ -59,8 +59,10 @@ export default function ControversiesTab() {
             </div>
             <div className="metadata-row md:col-span-2">
               <span className="metadata-row__label">Notable Donor</span>
-              <span className="metadata-row__value text-[var(--color-accent-red)] font-bold">$3,000 from Shivon Zilis</span>
-              <span className="text-[var(--color-ink-muted)] ml-2">— Neuralink's Director of Operations</span>
+              <span className="metadata-row__value text-[var(--color-accent-red)] font-bold">
+                $3,000 from <a href="https://en.wikipedia.org/wiki/Shivon_Zilis" target="_blank" rel="noopener noreferrer" className="source-link">Shivon Zilis</a>
+              </span>
+              <span className="text-[var(--color-ink-muted)] ml-2">— Neuralink's Director of Operations and Special Projects, mother of four of Elon Musk's children</span>
             </div>
           </div>
         </div>
