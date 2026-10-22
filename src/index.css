@@ -736,6 +736,65 @@ a,
   padding-left: calc(1rem - 3px);
 }
 
+/* More Menu Dropdown */
+.more-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: var(--color-paper);
+  border: 1.5px solid var(--color-ink);
+  box-shadow: var(--shadow-base);
+  z-index: 100;
+  min-width: 200px;
+}
+
+.more-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.more-menu__item {
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.more-menu__item:last-child {
+  border-bottom: none;
+}
+
+.more-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  min-height: 44px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.1s ease-out;
+}
+
+.more-menu__link:hover,
+.more-menu__link:focus-visible {
+  background-color: var(--color-desk-dark);
+}
+
+.more-menu__link--active {
+  color: var(--color-accent-red);
+  border-left: 3px solid var(--color-accent-red);
+  padding-left: calc(1rem - 3px);
+}
+
 /* Dark mode toggle button */
 .theme-toggle {
   display: inline-flex;
