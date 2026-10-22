@@ -34,6 +34,27 @@ export default function AustinFacilityTab() {
         </p>
       </Card>
 
+      {/* Facility Location */}
+      <Card title="Facility Location" icon={<Icons.Location size={24} />}>
+        <div className="mb-4">
+          <p className="text-[var(--color-ink-light)] leading-relaxed mb-3">
+            <strong className="text-[var(--color-ink)]">Physical Address:</strong> 2200 Caldwell Lane, Del Valle, TX 78617
+          </p>
+          <p className="text-[var(--color-ink-light)] leading-relaxed mb-3">
+            <strong className="text-[var(--color-ink)]">Note:</strong> Neuralink's mailing address (1701 Directors Blvd Ste 300, Austin, TX 78744) is a separate corporate office. The Del Valle facility is the actual manufacturing and research site.
+          </p>
+          <a 
+            href="https://earth.google.com/web/search/2200+Caldwell+Lane,+Del+Valle,+TX+78617"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="source-link inline-flex items-center gap-2"
+          >
+            <Icons.ExternalLink size={14} />
+            View on Google Earth
+          </a>
+        </div>
+      </Card>
+
       {/* The Verified Scale of Construction */}
       <Card title="The Verified Scale of Construction" icon={<Icons.Location size={24} />}>
         <p className="text-[var(--color-ink-light)] leading-relaxed mb-4">
@@ -115,6 +136,28 @@ export default function AustinFacilityTab() {
         </div>
       </Card>
 
+      {/* Hiring Pages */}
+      <Card title="Hiring Pages & Job Postings" icon={<Icons.Sources size={24} />}>
+        <p className="text-[var(--color-ink-light)] leading-relaxed mb-3">
+          Neuralink's careers page currently lists multiple positions in Austin, including a <strong className="text-[var(--color-ink)]">Neurosurgeon Resident</strong> position under the Surgery section.
+        </p>
+        <div className="space-y-3">
+          <SourceLink 
+            url="https://neuralink.com/careers/"
+            title="Neuralink Careers Page (Current)"
+          />
+          <SourceLink 
+            url="https://neuralink.com/careers/apply?gh_jid=7491410003"
+            title="Neurosurgeon Resident - Austin Position"
+          />
+          <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-warning-bg)]">
+            <p className="text-sm text-[var(--color-ink-light)] leading-relaxed">
+              <strong className="text-[var(--color-ink)]">Note on Archived Postings:</strong> The Drey Dossier's investigation referenced specific job postings (OR Specialist, Neurosurgeon Resident, Surgical Physician Assistant) from spring 2025. These specific postings may no longer be active. The Wayback Machine archives of neuralink.com/careers can be searched for historical versions, but direct archived links to specific job postings are not currently available.
+            </p>
+          </div>
+        </div>
+      </Card>
+
       {/* Primary Source Links */}
       <Card title="Primary Source Links" icon={<Icons.Sources size={24} />}>
         <div className="space-y-3">
@@ -145,6 +188,14 @@ export default function AustinFacilityTab() {
           <SourceLink 
             url="https://thedreydossier.substack.com/p/who-tf-is-in-my-head-part-6-the-neuralink"
             title="The Drey Dossier Part 6: The Neuralink Ranch"
+          />
+          <SourceLink 
+            url="https://earth.google.com/web/search/2200+Caldwell+Lane,+Del+Valle,+TX+78617"
+            title="Google Earth: 2200 Caldwell Lane, Del Valle, TX"
+          />
+          <SourceLink 
+            url="https://neuralink.com/careers/"
+            title="Neuralink Careers Page"
           />
         </div>
       </Card>
