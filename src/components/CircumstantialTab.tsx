@@ -207,7 +207,7 @@ export default function CircumstantialTab() {
           NIR LLC might indicate a shell company conducting experimental procedures. This claim was investigated and 
           <strong className="text-[var(--color-accent-blue)]"> debunked</strong> — NIR LLC is a legitimate medical practice owned by 
           <a href="https://drfsong.com/" target="_blank" rel="noopener noreferrer" className="source-link">Dr. Felix L. Song, MD</a>. 
-          See the <strong>Investigative Addendum</strong> below for full details.
+          See the <a href="#investigative-addendum" className="source-link">Investigative Addendum</a> below for full details.
         </p>
         <div className="divider" />
         <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-3">
@@ -277,6 +277,7 @@ export default function CircumstantialTab() {
       </Card>
 
       {/* Investigative Addendum: NIR LLC Audit */}
+      <div id="investigative-addendum" className="scroll-mt-20">
       <Card title="Investigative Addendum: NIR LLC Investigation" icon={<Icons.Document size={24} />}>
         <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[#e4ecf4] mb-4">
           <span className="status-badge status-badge--unsubstantiated">Claim Debunked: No Evidence of Shell Company</span>
@@ -382,6 +383,7 @@ export default function CircumstantialTab() {
           </div>
         </div>
       </Card>
+      </div>
 
       {/* Final Disclaimer */}
       <div className="dossier-card dossier-card--no-hover">

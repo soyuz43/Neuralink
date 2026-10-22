@@ -24,30 +24,42 @@ export default function OverviewTab({ onTabChange }: OverviewTabProps) {
         
         {/* Stats Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="dossier-card dossier-card--compact dossier-card--no-hover">
+          <button 
+            onClick={() => onTabChange('patients')}
+            className="interactive-card text-left"
+          >
             <div className="text-mono text-xs text-[var(--color-ink-muted)] uppercase tracking-[0.1em] mb-1">
               Patients
             </div>
             <div className="text-[2rem] font-bold text-[var(--color-ink)]">27+</div>
-          </div>
-          <div className="dossier-card dossier-card--compact dossier-card--no-hover">
+          </button>
+          <button 
+            onClick={() => onTabChange('trials')}
+            className="interactive-card text-left"
+          >
             <div className="text-mono text-xs text-[var(--color-ink-muted)] uppercase tracking-[0.1em] mb-1">
               Trial Sites
             </div>
             <div className="text-[2rem] font-bold text-[var(--color-ink)]">7</div>
-          </div>
-          <div className="dossier-card dossier-card--compact dossier-card--no-hover">
+          </button>
+          <button 
+            onClick={() => onTabChange('trials')}
+            className="interactive-card text-left"
+          >
             <div className="text-mono text-xs text-[var(--color-ink-muted)] uppercase tracking-[0.1em] mb-1">
               Countries
             </div>
             <div className="text-[2rem] font-bold text-[var(--color-ink)]">4</div>
-          </div>
-          <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-unverified-bg)]">
+          </button>
+          <button 
+            onClick={() => onTabChange('controversies')}
+            className="interactive-card text-left bg-[var(--color-unverified-bg)]"
+          >
             <div className="text-mono text-xs text-[var(--color-accent-red)] uppercase tracking-[0.1em] mb-1">
               FDA Status
             </div>
             <div className="text-[2rem] font-bold text-[var(--color-accent-red)]">0</div>
-          </div>
+          </button>
         </div>
       </div>
 
