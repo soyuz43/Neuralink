@@ -71,7 +71,7 @@ export default function ControversiesTab() {
 
         <div className="dossier-card dossier-card--compact dossier-card--no-hover mb-4">
           <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-2">
-            Direct Quotes from GoFundMe (verified)
+            Direct Quotes from GoFundMe
           </h4>
           <blockquote className="border-l-3 border-[var(--color-accent-red)] pl-4 italic text-[var(--color-ink-light)] my-3">
             "He's ready to give up on life, people. Not an understatement. Everything has been taken 
