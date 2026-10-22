@@ -252,10 +252,36 @@ export default function CircumstantialTab() {
             DOGE fired FDA employees overseeing Neuralink.
           </p>
         </div>
-        <p className="text-sm text-[var(--color-ink-light)]">
+        <p className="text-sm text-[var(--color-ink-light)] mb-4">
           In February 2025, DOGE fired approximately 20 employees from the FDA's Office of Neurological and Physical Medicine Devices, 
           the exact office responsible for overseeing Neuralink's clinical trials.
         </p>
+        <div className="divider" />
+        <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-3">
+          Sources & Documentation
+        </h4>
+        <div className="space-y-2">
+          <SourceLink 
+            url="https://www.reuters.com/world/us/fda-staff-reviewing-musks-neuralink-were-included-doge-employee-firings-sources-2025-02-17/"
+            title="Reuters: FDA staff reviewing Musk's Neuralink were included in DOGE employee firings"
+          />
+          <SourceLink 
+            url="https://www.cnbc.com/2025/02/22/us-fda-asks-fired-scientists-to-return-including-some-reviewing-musks-neuralink-.html"
+            title="CNBC: FDA asks fired scientists to return, including some reviewing Musk's Neuralink"
+          />
+          <SourceLink 
+            url="https://www.mobihealthnews.com/news/fda-neuralink-reviewers-fired-musks-doge-cuts-jobs"
+            title="MobiHealthNews: FDA Neuralink reviewers fired as Musk's DOGE cuts jobs"
+          />
+          <SourceLink 
+            url="https://www.citizen.org/news/musks-doge-operatives-should-leave-the-fda-alone/"
+            title="Public Citizen: Musk's DOGE Operatives Should Leave the FDA Alone"
+          />
+          <SourceLink 
+            url="https://thelimbic.com/neurology/fda-staff-reviewing-neuralink-fired-by-elon-musk-led-doge/"
+            title="The Limbic: FDA staff reviewing Neuralink fired by Elon Musk-led DOGE"
+          />
+        </div>
       </Card>
 
       {/* Investigative Addendum: NIR LLC Audit */}
@@ -371,10 +397,16 @@ export default function CircumstantialTab() {
           Conclusion
         </h3>
         <p className="text-[var(--color-ink-light)] leading-relaxed mb-4">
-          The circumstantial evidence documented above—geographic proximity, timing correlations, obscure contracting, 
-          and regulatory erosion—raises legitimate questions that warrant independent investigation and oversight. 
-          However, <strong className="text-[var(--color-accent-red)]">correlation does not equal causation</strong>, and there is currently 
-          <strong className="text-[var(--color-accent-red)]"> no direct evidence</strong> linking Neuralink to experiments on ICE detainees.
+          The circumstantial evidence documented above—geographic proximity, timing correlations, and regulatory erosion—raises 
+          legitimate questions that warrant independent investigation and oversight. However, <strong className="text-[var(--color-accent-red)]">correlation does not equal causation</strong>, 
+          and there is currently <strong className="text-[var(--color-accent-red)]">no direct evidence</strong> linking Neuralink to experiments on ICE detainees.
+        </p>
+        <p className="text-[var(--color-ink-light)] leading-relaxed mb-4">
+          <strong className="text-[var(--color-ink)]">Specifically regarding the Honolulu allegations:</strong> The initial claim that NIR LLC might be a shell company 
+          conducting experimental procedures on detainees has been <strong className="text-[var(--color-accent-blue)]">investigated and debunked</strong>. NIR LLC is a legitimate 
+          medical practice owned by Dr. Felix L. Song, MD, a board-certified Interventional Neuroradiologist. The geographic proximity 
+          of FDC Honolulu to major medical centers remains a valid topic for immigration oversight, but <strong className="text-[var(--color-accent-red)]">we do not believe the available 
+          evidence supports the claim that Neuralink is currently operating on ICE detainees in Honolulu</strong>.
         </p>
         <p className="text-sm text-[var(--color-ink-muted)]">
           This documentation is presented in the interest of transparency and public accountability. 
