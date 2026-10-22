@@ -12,6 +12,7 @@ const tabs: Tab[] = [
   { id: 'patients', label: 'Patients', icon: Icons.Patients },
   { id: 'controversies', label: 'Controversies', icon: Icons.Warning },
   { id: 'circumstantial', label: 'Circumstantial', icon: Icons.Circumstantial },
+  { id: 'austin-facility', label: 'Austin Facility', icon: Icons.Location },
   { id: 'technology', label: 'Technology', icon: Icons.Technology },
   { id: 'sources', label: 'Sources', icon: Icons.Sources },
 ];
