@@ -1,8 +1,10 @@
-export default function Sources() {
+import Card from './Card';
+
+export default function SourcesTab() {
   const sources = [
     {
       category: 'The Drey Dossier Investigation Series',
-      description: 'Complete investigative series by The Drey Dossier on Substack',
+      description: 'Complete investigative series on Substack',
       links: [
         { title: 'Part 1: The Neural Network', url: 'https://thedreydossier.substack.com/p/who-tf-is-in-my-head-part-1-the-neural', description: 'ICE detention facilities, geographic patterns, Honolulu mystery' },
         { title: 'Part 2: Past It\'s PRIME', url: 'https://thedreydossier.substack.com/p/who-tf-is-in-my-head-part-2-past', description: 'BCI technology overview, founding scientists departures' },
@@ -132,54 +134,46 @@ export default function Sources() {
   ];
 
   return (
-    <section id="sources" className="scroll-mt-20">
-      <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-        <span className="text-3xl">📚</span> Sources & References
-      </h2>
+    <div className="space-y-6">
+      <Card title="Sources & References" icon="📚">
+        <p className="mb-4">
+          All information on this page is compiled from publicly available sources including news reports, 
+          clinical trial registries, academic publications, investigative journalism, and official company 
+          statements. This is an independent documentation project and is not affiliated with Neuralink Corp.
+        </p>
+      </Card>
 
-      <p className="text-gray-400 mb-8 leading-relaxed">
-        All information on this page is compiled from publicly available sources including news reports,
-        clinical trial registries, academic publications, investigative journalism, and official company
-        statements. This is an independent documentation project and is not affiliated with Neuralink Corp.
-      </p>
+      {sources.map((group) => (
+        <Card key={group.category} title={group.category} icon="🔗">
+          {group.description && (
+            <p className="text-xs text-gray-500 mb-3 italic">{group.description}</p>
+          )}
+          <ul className="space-y-2">
+            {group.links.map((link, i) => (
+              <li key={i}>
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
+                >
+                  <span className="text-gray-600 group-hover:text-blue-400 mt-0.5">↗</span>
+                  <div>
+                    <span className="group-hover:underline">{link.title}</span>
+                    {link.description && (
+                      <span className="block text-xs text-gray-500 mt-0.5">{link.description}</span>
+                    )}
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </Card>
+      ))}
 
-      <div className="space-y-8">
-        {sources.map((group) => (
-          <div key={group.category}>
-            <h3 className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-2">
-              {group.category}
-            </h3>
-            {group.description && (
-              <p className="text-xs text-gray-500 mb-3 italic">{group.description}</p>
-            )}
-            <ul className="space-y-2">
-              {group.links.map((link, i) => (
-                <li key={i}>
-                  <a
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-start gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
-                  >
-                    <span className="text-gray-600 group-hover:text-blue-400 mt-0.5">↗</span>
-                    <div>
-                      <span className="group-hover:underline">{link.title}</span>
-                      {link.description && (
-                        <span className="block text-xs text-gray-500 mt-0.5">{link.description}</span>
-                      )}
-                    </div>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-12 p-6 rounded-xl bg-gray-800/30 border border-gray-700">
-        <h3 className="font-bold text-white mb-3">About This Documentation</h3>
+      <Card title="About This Documentation" icon="ℹ️">
         <p className="text-sm text-gray-400 leading-relaxed mb-4">
-          This site was created to document and analyze the publicly available information about
+          This site was created to document and analyze the publicly available information about 
           Neuralink's clinical trials, with particular focus on:
         </p>
         <ul className="space-y-2 text-sm text-gray-400">
@@ -211,17 +205,13 @@ export default function Sources() {
             <span className="text-amber-400">•</span>
             <span>Tracking all known patients and their public disclosure status</span>
           </li>
-          <li className="flex items-start gap-2">
-            <span className="text-amber-400">•</span>
-            <span>Geographic patterns and ICE detention facility connections (The Drey Dossier investigation)</span>
-          </li>
         </ul>
         <p className="text-sm text-gray-500 mt-4">
-          This documentation is for informational and educational purposes only. It does not constitute
-          medical advice. Neuralink devices are investigational and have not been approved by the FDA
+          This documentation is for informational and educational purposes only. It does not constitute 
+          medical advice. Neuralink devices are investigational and have not been approved by the FDA 
           or other regulatory authorities.
         </p>
-      </div>
-    </section>
+      </Card>
+    </div>
   );
 }
