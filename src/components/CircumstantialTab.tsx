@@ -199,6 +199,113 @@ export default function CircumstantialTab() {
         </p>
       </Card>
 
+      {/* Investigative Addendum: NIR LLC Audit */}
+      <Card title="Investigative Addendum: Auditing the 'NIR LLC' Claim" icon={<Icons.Document size={24} />}>
+        <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[#e4ecf4] mb-4">
+          <span className="status-badge status-badge--verified-resolved">Status: Verified (Claim Resolved)</span>
+        </div>
+
+        <div className="space-y-4">
+          <div>
+            <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-2">
+              The Initial Claim
+            </h4>
+            <p className="text-sm text-[var(--color-ink-light)]">
+              Initial reporting by independent investigators highlighted Department of Defense contracts for "neurological services" 
+              awarded to a Honolulu-based entity named NIR LLC, with work locations listed at Tripler Army Medical Center. 
+              Concerns were raised that this might be an obscure shell company linked to experimental procedures.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-2">
+              The Verification Methodology
+            </h4>
+            <p className="text-sm text-[var(--color-ink-light)]">
+              To verify this, this dossier cross-referenced federal contracting data with official Hawaii state business 
+              registries and medical licensing directories.
+            </p>
+          </div>
+
+          <div>
+            <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-2">
+              Primary Source Findings
+            </h4>
+            <ul className="space-y-2 text-sm text-[var(--color-ink-light)]">
+              <li className="flex items-start gap-2">
+                <span className="text-[var(--color-accent-blue)] font-bold text-mono">01</span>
+                <div>
+                  <strong className="text-[var(--color-ink)]">Identified Leadership:</strong> The Hawaii Department of Commerce 
+                  and Consumer Affairs (DCCA) registry explicitly lists the Registered Agent and Managing Member of NIR, LLC 
+                  as Felix L. Song, MD.
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[var(--color-accent-blue)] font-bold text-mono">02</span>
+                <div>
+                  <strong className="text-[var(--color-ink)]">Medical Specialty:</strong> Dr. Song is a board-certified 
+                  Interventional Neuroradiologist. His official practice locations include both Straub Medical Center 
+                  (888 S King St) and Tripler Army Medical Center.
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[var(--color-accent-blue)] font-bold text-mono">03</span>
+                <div>
+                  <strong className="text-[var(--color-ink)]">Contract Scope:</strong> Federal records confirm the LLC's 
+                  contracts are for standard, on-call neurointerventional services (e.g., angiography, stroke response) 
+                  for the military, not experimental research or device manufacturing.
+                </div>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-[var(--color-accent-blue)] font-bold text-mono">04</span>
+                <div>
+                  <strong className="text-[var(--color-ink)]">Longevity:</strong> The LLC has been actively registered and 
+                  in good standing with the State of Hawaii since May 2005, with consistent annual filings, long predating 
+                  modern brain-computer interface trials.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div className="divider" />
+
+          <div>
+            <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-2">
+              Conclusion
+            </h4>
+            <p className="text-sm text-[var(--color-ink-light)]">
+              "NIR" is a standard medical abbreviation for NeuroInterventional Radiology. This entity is a legitimate, 
+              long-standing professional billing LLC for a real, board-certified physician providing routine neurovascular 
+              care to the military. While the geographic proximity of Honolulu's Federal Detention Center to major medical 
+              hubs remains a valid topic for immigration oversight, there is no evidentiary link between NIR LLC, Neuralink, 
+              or experimental testing. This dossier has been updated to reflect this verified finding.
+            </p>
+          </div>
+
+          <div className="divider" />
+
+          <div>
+            <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-3">
+              Primary Source Links
+            </h4>
+            <div className="space-y-2">
+              <SourceLink 
+                url="https://hbe.dcca.hawaii.gov/search-and-buy?searchTerm=nir+llc&entityId=001t000000FJQTNAA5"
+                title="Hawaii DCCA Business Registry (NIR, LLC)"
+              />
+              <SourceLink 
+                url="https://govtribe.com/vendors/nir-llc-43rs4"
+                title="GovTribe NIR LLC Federal Contractor Profile"
+              />
+              <SourceLink 
+                url="https://drfsong.com/"
+                title="Dr. Felix L. Song, MD Practice Information"
+              />
+            </div>
+          </div>
+        </div>
+      </Card>
+
       {/* Final Disclaimer */}
       <div className="dossier-card dossier-card--no-hover">
         <h3 className="text-mono text-lg uppercase tracking-[0.02em] text-[var(--color-ink)] mb-3">
