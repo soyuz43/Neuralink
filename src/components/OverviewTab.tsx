@@ -108,11 +108,11 @@ export default function OverviewTab() {
 
       {/* Quick Links */}
       <Card title="Quick Navigation" icon="🔗">
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           <a href="#trials" className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-colors">
             <div className="text-2xl mb-2">🧪</div>
             <div className="font-bold text-white mb-1">Clinical Trials</div>
-            <div className="text-sm text-gray-400">Locations, procedures, and regulatory details</div>
+            <div className="text-sm text-gray-400">Interactive site map with detailed documentation</div>
           </a>
           <a href="#patients" className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-purple-500/50 transition-colors">
             <div className="text-2xl mb-2">👥</div>
@@ -123,6 +123,11 @@ export default function OverviewTab() {
             <div className="text-2xl mb-2">⚠️</div>
             <div className="font-bold text-white mb-1">Controversies</div>
             <div className="text-sm text-gray-400">Ethical concerns and investigations</div>
+          </a>
+          <a href="#circumstantial" className="block p-4 bg-amber-900/10 rounded-lg border border-amber-800/30 hover:border-amber-600 transition-colors">
+            <div className="text-2xl mb-2">🔍</div>
+            <div className="font-bold text-amber-400 mb-1">Circumstantial</div>
+            <div className="text-sm text-gray-400">ICE detention connections (no direct evidence)</div>
           </a>
         </div>
       </Card>

@@ -1,14 +1,18 @@
+import { useState } from 'react';
 import Card from './Card';
+import Modal from './Modal';
+import { trialSites, TrialSite } from '../data/trialSites';
 
 export default function TrialsTab() {
+  const [selectedSite, setSelectedSite] = useState<TrialSite | null>(null);
+
   return (
     <div className="space-y-6">
       {/* Trial Sites Map */}
       <Card title="Global Trial Locations" icon="🌍">
         <p className="mb-4">
           Neuralink's clinical trials are being conducted at 7 sites across 4 countries. 
-          The expansion beyond the United States—particularly to the UAE—has raised questions 
-          about regulatory oversight.
+          Click on any site to view detailed information, trial specifics, and source documentation.
         </p>
         
         <div className="grid md:grid-cols-2 gap-4 mt-6">
@@ -17,21 +21,26 @@ export default function TrialsTab() {
               <span>🇺🇸</span> United States (3 sites)
             </h4>
             <div className="space-y-2 pl-6">
-              <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700">
-                <div className="font-bold text-white">Phoenix, AZ</div>
-                <div className="text-sm text-gray-400">Barrow Neurological Institute</div>
-                <div className="text-xs text-blue-400 mt-1">PRIME, CONVOY • First implant: Jan 2024</div>
-              </div>
-              <div className="bg-purple-900/20 rounded-lg p-3 border border-purple-800/30">
-                <div className="font-bold text-white">Dallas, TX</div>
-                <div className="text-sm text-gray-400">UT Southwestern Medical Center</div>
-                <div className="text-xs text-purple-400 mt-1">VOICE trial • Speech cortex surgery</div>
-              </div>
-              <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700">
-                <div className="font-bold text-white">Miami, FL</div>
-                <div className="text-sm text-gray-400">University of Miami Health</div>
-                <div className="text-xs text-blue-400 mt-1">PRIME, CONVOY • First implant: Apr 2025</div>
-              </div>
+              {trialSites.filter(s => s.country === 'USA').map((site) => (
+                <button
+                  key={site.id}
+                  onClick={() => setSelectedSite(site)}
+                  className={`w-full text-left rounded-lg p-3 border transition-all hover:scale-[1.02] ${
+                    site.id === 'dallas' 
+                      ? 'bg-purple-900/20 border-purple-800/30 hover:border-purple-600'
+                      : 'bg-gray-800/50 border-gray-700 hover:border-blue-500/50'
+                  }`}
+                >
+                  <div className="font-bold text-white">{site.city}, {site.state}</div>
+                  <div className="text-sm text-gray-400">{site.facility}</div>
+                  <div className={`text-xs mt-1 ${
+                    site.id === 'dallas' ? 'text-purple-400' : 'text-blue-400'
+                  }`}>
+                    {site.trials.join(', ')} • First implant: {site.firstImplant}
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">{site.description}</div>
+                </button>
+              ))}
             </div>
           </div>
 
@@ -40,38 +49,57 @@ export default function TrialsTab() {
               <span>🇬🇧</span> United Kingdom (2 sites)
             </h4>
             <div className="space-y-2 pl-6">
-              <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700">
-                <div className="font-bold text-white">London</div>
-                <div className="text-sm text-gray-400">University College London Hospitals</div>
-                <div className="text-xs text-blue-400 mt-1">GB-PRIME • First implant: Oct 2025</div>
-              </div>
-              <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700">
-                <div className="font-bold text-white">Newcastle upon Tyne</div>
-                <div className="text-sm text-gray-400">Newcastle upon Tyne Hospitals</div>
-                <div className="text-xs text-gray-500 mt-1">GB-PRIME • Enrolling</div>
-              </div>
+              {trialSites.filter(s => s.country === 'United Kingdom').map((site) => (
+                <button
+                  key={site.id}
+                  onClick={() => setSelectedSite(site)}
+                  className="w-full text-left bg-gray-800/50 rounded-lg p-3 border border-gray-700 hover:border-blue-500/50 transition-all hover:scale-[1.02]"
+                >
+                  <div className="font-bold text-white">{site.city}</div>
+                  <div className="text-sm text-gray-400">{site.facility}</div>
+                  <div className="text-xs text-blue-400 mt-1">
+                    {site.trials.join(', ')} • First implant: {site.firstImplant}
+                  </div>
+                </button>
+              ))}
             </div>
 
             <h4 className="font-bold text-white flex items-center gap-2 mt-4">
               <span>🇨🇦</span> Canada (1 site)
             </h4>
             <div className="space-y-2 pl-6">
-              <div className="bg-gray-800/50 rounded-lg p-3 border border-gray-700">
-                <div className="font-bold text-white">Toronto, ON</div>
-                <div className="text-sm text-gray-400">University Health Network</div>
-                <div className="text-xs text-blue-400 mt-1">CAN-PRIME • First implant: Aug 2025</div>
-              </div>
+              {trialSites.filter(s => s.country === 'Canada').map((site) => (
+                <button
+                  key={site.id}
+                  onClick={() => setSelectedSite(site)}
+                  className="w-full text-left bg-gray-800/50 rounded-lg p-3 border border-gray-700 hover:border-blue-500/50 transition-all hover:scale-[1.02]"
+                >
+                  <div className="font-bold text-white">{site.city}, {site.state}</div>
+                  <div className="text-sm text-gray-400">{site.facility}</div>
+                  <div className="text-xs text-blue-400 mt-1">
+                    {site.trials.join(', ')} • First implant: {site.firstImplant}
+                  </div>
+                </button>
+              ))}
             </div>
 
             <h4 className="font-bold text-white flex items-center gap-2 mt-4">
               <span>🇦🇪</span> United Arab Emirates (1 site)
             </h4>
             <div className="space-y-2 pl-6">
-              <div className="bg-amber-900/20 rounded-lg p-3 border border-amber-800/30">
-                <div className="font-bold text-white">Abu Dhabi</div>
-                <div className="text-sm text-gray-400">Cleveland Clinic Abu Dhabi</div>
-                <div className="text-xs text-amber-400 mt-1">UAE-PRIME • Regulatory concerns</div>
-              </div>
+              {trialSites.filter(s => s.country === 'UAE').map((site) => (
+                <button
+                  key={site.id}
+                  onClick={() => setSelectedSite(site)}
+                  className="w-full text-left bg-amber-900/20 rounded-lg p-3 border border-amber-800/30 hover:border-amber-600 transition-all hover:scale-[1.02]"
+                >
+                  <div className="font-bold text-white">{site.city}</div>
+                  <div className="text-sm text-gray-400">{site.facility}</div>
+                  <div className="text-xs text-amber-400 mt-1">
+                    {site.trials.join(', ')} • Regulatory concerns
+                  </div>
+                </button>
+              ))}
             </div>
           </div>
         </div>
@@ -221,6 +249,81 @@ export default function TrialsTab() {
           </div>
         </div>
       </Card>
+
+      {/* Site Detail Modal */}
+      <Modal
+        isOpen={!!selectedSite}
+        onClose={() => setSelectedSite(null)}
+        title={selectedSite ? `${selectedSite.city}${selectedSite.state ? `, ${selectedSite.state}` : ''}` : ''}
+      >
+        {selectedSite && (
+          <div className="space-y-6">
+            <div>
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-2xl">{selectedSite.flag}</span>
+                <h3 className="text-xl font-bold text-white">{selectedSite.facility}</h3>
+              </div>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {selectedSite.trials.map((trial) => (
+                  <span
+                    key={trial}
+                    className={`px-2 py-1 rounded text-xs font-mono ${
+                      trial === 'VOICE'
+                        ? 'bg-purple-500/10 text-purple-400 border border-purple-500/20'
+                        : 'bg-blue-500/10 text-blue-400 border border-blue-500/20'
+                    }`}
+                  >
+                    {trial}
+                  </span>
+                ))}
+                <span className={`px-2 py-1 rounded text-xs ${
+                  selectedSite.status === 'active'
+                    ? 'bg-green-500/10 text-green-400 border border-green-500/20'
+                    : 'bg-yellow-500/10 text-yellow-400 border border-yellow-500/20'
+                }`}>
+                  {selectedSite.status === 'active' ? 'Active' : 'Enrolling'}
+                </span>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-white mb-2">About</h4>
+              <p className="text-gray-300 text-sm">{selectedSite.details.about}</p>
+            </div>
+
+            <div>
+              <h4 className="font-bold text-white mb-2">Trial Details</h4>
+              <p className="text-gray-300 text-sm">{selectedSite.details.trialDetails}</p>
+            </div>
+
+            {selectedSite.details.nearbyFacilities && (
+              <div className="bg-amber-900/20 border border-amber-800/30 rounded-lg p-4">
+                <h4 className="font-bold text-amber-400 mb-2">⚠️ Geographic Note</h4>
+                <p className="text-amber-200/80 text-sm">{selectedSite.details.nearbyFacilities}</p>
+              </div>
+            )}
+
+            <div>
+              <h4 className="font-bold text-white mb-3">Sources & Documentation</h4>
+              <ul className="space-y-2">
+                {selectedSite.details.sources.map((source, i) => (
+                  <li key={i}>
+                    <a
+                      href={source.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors group"
+                    >
+                      <span className="text-gray-600 group-hover:text-blue-400 mt-0.5">↗</span>
+                      <span className="group-hover:underline">{source.title}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        )}
+      </Modal>
     </div>
   );
 }
