@@ -14,7 +14,7 @@ export default function App() {
   const renderTabContent = () => {
     switch (activeTab) {
       case 'overview':
-        return <OverviewTab />;
+        return <OverviewTab onTabChange={setActiveTab} />;
       case 'trials':
         return <TrialsTab />;
       case 'patients':
@@ -28,7 +28,7 @@ export default function App() {
       case 'sources':
         return <SourcesTab />;
       default:
-        return <OverviewTab />;
+        return <OverviewTab onTabChange={setActiveTab} />;
     }
   };
 
