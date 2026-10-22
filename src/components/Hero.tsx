@@ -25,8 +25,9 @@ export default function Hero() {
           <p className="text-gray-400 text-lg max-w-2xl leading-relaxed mb-6">
             A comprehensive documentation of Neuralink's brain-computer interface clinical trials,
             including the speech restoration trials in the UAE and Dallas, TX — performed on the
-            speech cortex of the brain. Covering trial locations, FDA regulatory history,
-            ethical concerns, and the technology involved.
+            speech cortex of the brain. Covering trial locations, all 27+ known patients, the
+            Patient 4 GoFundMe controversy, FDA regulatory history, animal testing (15 of 23
+            monkeys died at UC Davis), and the technology involved.
           </p>
 
           <div className="flex flex-wrap gap-4 text-sm">

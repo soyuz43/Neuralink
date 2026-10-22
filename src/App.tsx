@@ -6,6 +6,8 @@ import TrialSites from './components/TrialSites';
 import UAEPrime from './components/UAEPrime';
 import VoiceTrial from './components/VoiceTrial';
 import SpeechCortex from './components/SpeechCortex';
+import KnownPatients from './components/KnownPatients';
+import PatientFour from './components/PatientFour';
 import FDATimeline from './components/FDATimeline';
 import EthicalConcerns from './components/EthicalConcerns';
 import Technology from './components/Technology';
@@ -44,6 +46,8 @@ export default function App() {
             <UAEPrime />
             <VoiceTrial />
             <SpeechCortex />
+            <KnownPatients />
+            <PatientFour />
             <FDATimeline />
             <EthicalConcerns />
             <Technology />
@@ -53,7 +57,7 @@ export default function App() {
           {/* Footer */}
           <footer className="border-t border-gray-800 mt-16 py-8 px-4 text-center text-gray-500 text-sm">
             <p>This is an independent documentation project. Not affiliated with Neuralink Corp.</p>
-            <p className="mt-2">Information compiled from public sources, news reports, and clinical trial registries.</p>
+            <p className="mt-2">Information compiled from public sources, news reports, clinical trial registries, and investigative journalism.</p>
             <p className="mt-2">Last updated: 2026</p>
           </footer>
         </main>

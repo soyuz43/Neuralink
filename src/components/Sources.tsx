@@ -7,6 +7,16 @@ export default function Sources() {
         { title: 'Neuralink Speech Restoration Trial', url: 'https://neuralink.com/trials/speech-restoration/' },
         { title: 'VOICE Trial (NCT07224256) on ClinicalTrials.gov', url: 'https://clinicaltrials.gov/search?spons=Neuralink' },
         { title: 'Neuralink Trial Sites List (NeuraPod)', url: 'https://www.neurapod.com/clinical-trial-sites-list' },
+        { title: 'Neuralink Patient Timeline (NeuraPod)', url: 'https://www.neurapod.com/neuralink-patient-timeline' },
+      ],
+    },
+    {
+      category: 'Patient 4 / Mike Melgarejo / GoFundMe',
+      links: [
+        { title: 'GoFundMe: "Those things we do, so others may live"', url: 'https://www.gofundme.com/f/those-things-we-do-so-others-may-live' },
+        { title: 'The Drey Dossier: "Who TF Is In My Head?? | Part 4: Where TF Is Patient Four?"', url: 'https://thedreydossier.substack.com/p/who-tf-is-in-my-head-part-4-where' },
+        { title: 'Distractify: "What Happened to Neuralink Patient 4?"', url: 'https://www.distractify.com/p/what-happened-to-neuralink-patient-4' },
+        { title: 'Neuralink Summer 2025 Update (YouTube)', url: 'https://www.youtube.com/watch?v=FASMejN_5gs' },
       ],
     },
     {
@@ -25,24 +35,39 @@ export default function Sources() {
         { title: 'The Guardian: Neuralink approved for human testing', url: 'https://www.theguardian.com/technology/2023/jun/04/elon-musk-neuralink-approved-human-testing-concern' },
         { title: 'TechCrunch: Neuralink human testing received FDA rejection', url: 'https://techcrunch.com/2023/03/02/neuralink-human-testing-has-reportedly-received-one-fda-rejection-already/' },
         { title: 'CNBC: Neuralink has faced issues with its wires for years', url: 'https://www.cnbc.com/2024/05/15/neuralink-has-faced-issues-with-its-wires-for-years-reuters-sources.html' },
+        { title: 'FDA Adverse Event Reporting (21 CFR 312.32)', url: 'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-D/part-312/subpart-B/section-312.32' },
+        { title: 'FDA Financial Disclosure (21 CFR Part 54)', url: 'https://www.ecfr.gov/current/title-21/chapter-I/subchapter-A/part-54' },
       ],
     },
     {
-      category: 'Ethics & Animal Testing',
+      category: 'Animal Testing',
       links: [
+        { title: 'WIRED: How Neuralink Keeps Dead Monkey Photos Secret', url: 'https://www.wired.com/story/neuralink-uc-davis-monkey-photos-videos-secret/' },
         { title: 'The Guardian: Neuralink faces federal inquiry after killing animals', url: 'https://www.theguardian.com/technology/2022/dec/05/neuralink-animal-testing-elon-musk-investigation' },
         { title: 'Reuters: Neuralink faces federal probe, employee backlash', url: 'https://www.reuters.com/technology/musks-neuralink-faces-federal-probe-employee-backlash-over-animal-tests-2022-12-05/' },
         { title: 'PCRM: Neuralink\'s Cruel Brain Experiments', url: 'https://www.pcrm.org/ethical-science/animals-in-medical-research/cruel-brain-experiments' },
-        { title: 'Neurology Today: Ethical Questions Swirl Around Neuralink', url: 'https://neurologytoday.aan.com/doi/10.1097/01.NT.0001022988.26412.f4' },
+        { title: 'PCRM: Original Records of Each Monkey Used by Neuralink at UC Davis', url: 'https://www.pcrm.org/ethical-science/animals-in-medical-research/original-records-neuralink' },
+        { title: 'AWI: Investigation Uncovers Disturbing Details of Neuralink Monkey Study', url: 'https://awionline.org/awi-quarterly/winter-2023/investigation-uncovers-disturbing-details-of-neuralink-monkey-study/' },
+        { title: 'USDA to Look Into Monkey Experiments Funded by Neuralink (PCRM)', url: 'https://www.pcrm.org/news/news-releases/us-department-agriculture-look-monkey-experiments-funded-elon-musks-neuralink' },
       ],
     },
     {
-      category: 'Research & Analysis',
+      category: 'Ethics & Neuroethics',
       links: [
-        { title: 'Nature: Long-term independent use of intracortical BCI', url: 'https://www.nature.com/articles/s41591-026-04414-6' },
-        { title: 'Frontiers: Neuralink\'s BCIs - medical innovations & ethical concerns', url: 'https://www.frontiersin.org/journals/human-dynamics/articles/10.3389/fhumd.2025.1553905/full' },
+        { title: 'Neurology Today: Ethical Questions Swirl Around Neuralink', url: 'https://neurologytoday.aan.com/doi/10.1097/01.NT.0001022988.26412.f4' },
         { title: 'University of Chicago: The future of medicine or ethical nightmare?', url: 'https://voices.uchicago.edu/triplehelix/2025/01/02/the-future-of-medicine-or-an-ethical-nightmare-elon-musks-neuralink-and-the-advent-of-brain-machine-interfaces/' },
         { title: 'The Hastings Center: The Neuralink Patient Behind the Musk', url: 'https://www.thehastingscenter.org/the-neuralink-patient-behind-the-musk/' },
+        { title: 'Frontiers: Neuralink\'s BCIs - medical innovations & ethical concerns', url: 'https://www.frontiersin.org/journals/human-dynamics/articles/10.3389/fhumd.2025.1553905/full' },
+      ],
+    },
+    {
+      category: 'Research & Academic',
+      links: [
+        { title: 'Nature: Long-term independent use of intracortical BCI (Card et al., 2026)', url: 'https://www.nature.com/articles/s41591-026-04414-6' },
+        { title: 'Ienca & Andorno: Towards New Human Rights in the Age of Neuroscience (2017)', url: 'https://link.springer.com/article/10.1186/s40504-017-0050-1' },
+        { title: 'Ienca: On Neurorights (Frontiers in Human Neuroscience, 2021)', url: 'https://pubmed.ncbi.nlm.nih.gov/34630057/' },
+        { title: 'Yang & Jiang: Regulating neural data processing (Digital Health, 2025)', url: 'https://journals.sagepub.com/doi/full/10.1177/20552076251326123' },
+        { title: 'Naufel & Klein: BCI Researcher Perspectives on Neural Data (2020)', url: 'https://pubmed.ncbi.nlm.nih.gov/31766026/' },
       ],
     },
     {
@@ -51,7 +76,9 @@ export default function Sources() {
         { title: 'NeuraPod: Neuralink Begins VOICE Human Trial', url: 'https://www.neurapod.com/blog/elon-musks-neuralink-successfully-begins-voice-human-trial-for-speech-restoration' },
         { title: 'Reuters: Neuralink plans brain implant trial for speech impairments', url: 'https://www.reuters.com/business/healthcare-pharmaceuticals/elon-musks-neuralink-plans-brain-implant-trial-speech-impairments-2025-09-19/' },
         { title: 'Neuralink: Two Years of Telepathy Updates', url: 'https://neuralink.com/updates/two-years-of-telepathy/' },
+        { title: 'Neuralink: A Year of Telepathy Updates', url: 'https://neuralink.com/updates/a-year-of-telepathy/' },
         { title: 'Neuralink Wikipedia', url: 'https://en.wikipedia.org/wiki/Neuralink' },
+        { title: 'How Many Humans Have Neuralink (counter)', url: 'https://www.howmanyhumanshaveneuralink.com/' },
       ],
     },
   ];
@@ -64,8 +91,8 @@ export default function Sources() {
 
       <p className="text-gray-400 mb-8 leading-relaxed">
         All information on this page is compiled from publicly available sources including news reports,
-        clinical trial registries, academic publications, and official company statements. This is an
-        independent documentation project and is not affiliated with Neuralink Corp.
+        clinical trial registries, academic publications, investigative journalism, and official company
+        statements. This is an independent documentation project and is not affiliated with Neuralink Corp.
       </p>
 
       <div className="space-y-8">
@@ -115,6 +142,18 @@ export default function Sources() {
           <li className="flex items-start gap-2">
             <span className="text-amber-400">•</span>
             <span>The FDA regulatory history and ethical concerns</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-amber-400">•</span>
+            <span>The Patient 4 / Mike Melgarejo GoFundMe situation and Shivon Zilis donation</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-amber-400">•</span>
+            <span>Animal testing at UC Davis (15 of 23 monkeys died)</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <span className="text-amber-400">•</span>
+            <span>Tracking all known patients and their public disclosure status</span>
           </li>
         </ul>
         <p className="text-sm text-gray-500 mt-4">
