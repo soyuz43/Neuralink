@@ -23,7 +23,7 @@ export default function OverviewTab({ onTabChange }: OverviewTabProps) {
         </p>
         
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid stat-strip gap-4" style={{gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))'}}>
           <button 
             onClick={() => onTabChange('patients')}
             className="interactive-card text-left"
@@ -34,7 +34,7 @@ export default function OverviewTab({ onTabChange }: OverviewTabProps) {
             <div className="text-[2rem] font-bold text-[var(--color-ink)]">27+</div>
           </button>
           <button 
-            onClick={() => onTabChange('trials')}
+            onClick={() => onTabChange('clinical-trials')}
             className="interactive-card text-left"
           >
             <div className="text-mono text-xs text-[var(--color-ink-muted)] uppercase tracking-[0.1em] mb-1">
@@ -43,7 +43,7 @@ export default function OverviewTab({ onTabChange }: OverviewTabProps) {
             <div className="text-[2rem] font-bold text-[var(--color-ink)]">7</div>
           </button>
           <button 
-            onClick={() => onTabChange('trials')}
+            onClick={() => onTabChange('clinical-trials')}
             className="interactive-card text-left"
           >
             <div className="text-mono text-xs text-[var(--color-ink-muted)] uppercase tracking-[0.1em] mb-1">
@@ -67,7 +67,7 @@ export default function OverviewTab({ onTabChange }: OverviewTabProps) {
       <Card title="Quick Navigation" icon={<Icons.Overview size={24} />}>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           <button 
-            onClick={() => onTabChange('trials')}
+            onClick={() => onTabChange('clinical-trials')}
             className="interactive-card"
           >
             <Icons.Trials size={24} className="mb-2" />

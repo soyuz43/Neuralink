@@ -9,7 +9,7 @@ interface Tab {
 
 const tabs: Tab[] = [
   { id: 'overview', label: 'Overview', icon: Icons.Overview },
-  { id: 'trials', label: 'Clinical Trials', icon: Icons.Trials },
+  { id: 'clinical-trials', label: 'Clinical Trials', icon: Icons.Trials },
   { id: 'patients', label: 'Patients', icon: Icons.Patients },
   { id: 'controversies', label: 'Controversies', icon: Icons.Warning },
   { id: 'circumstantial', label: 'Circumstantial', icon: Icons.Circumstantial },
@@ -192,7 +192,7 @@ export default function TabNavigation({ activeTab, onTabChange }: TabNavigationP
 
           {/* Mobile Hamburger Button */}
           <button
-            className="hamburger-btn lg:hidden"
+            className="hamburger-btn xl:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-menu"
@@ -208,7 +208,7 @@ export default function TabNavigation({ activeTab, onTabChange }: TabNavigationP
       {/* Mobile Menu Panel */}
       <div
         id="mobile-menu"
-        className={`mobile-menu lg:hidden ${mobileMenuOpen ? 'mobile-menu--open' : ''}`}
+        className={`mobile-menu xl:hidden ${mobileMenuOpen ? 'mobile-menu--open' : ''}`}
         role="navigation"
         aria-label="Mobile navigation"
       >
