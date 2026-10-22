@@ -166,10 +166,28 @@ export default function CircumstantialTab() {
             Solitary confinement increased from 14 to 38 days average.
           </p>
         </div>
-        <p className="text-sm text-[var(--color-ink-light)]">
+        <p className="text-sm text-[var(--color-ink-light)] mb-4">
           Data confirms a sharp rise in solitary confinement in Arizona ICE detention centers (Eloy and Florence), 
           from historical averages of 14 days to as high as 38 days.
         </p>
+        <div className="divider" />
+        <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-3">
+          Sources
+        </h4>
+        <div className="space-y-2">
+          <SourceLink 
+            url="https://www.axios.com/local/phoenix/2025/10/08/arizona-ice-solitary-confinement-rise"
+            title="Axios Phoenix: Arizona ICE solitary confinement spike"
+          />
+          <SourceLink 
+            url="https://cronkitenews.azpbs.org/2025/11/10/as-solitary-confinement-surges-in-ice-detention-centers-oversight-weakens-and-concerns-mount/"
+            title="Cronkite News: Solitary confinement surges in ICE detention centers"
+          />
+          <SourceLink 
+            url="https://firrp.org/arizona-adult-immigration-detention-center-complaints-march-2024-august-2024/"
+            title="Florence Project: Arizona detention center conditions report"
+          />
+        </div>
       </Card>
 
       <Card title="4. ICE Transfers to Honolulu: FDC Honolulu" icon={<Icons.Warning size={24} />} variant="warning">
@@ -184,13 +202,39 @@ export default function CircumstantialTab() {
           These transfers moved detainees approximately 4,500 miles from their original arrest locations, raising concerns 
           about access to legal representation and oversight.
         </p>
-        <p className="text-sm text-[var(--color-ink-light)]">
+        <p className="text-sm text-[var(--color-ink-light)] mb-4">
           <strong className="text-[var(--color-ink)]">Regarding NIR LLC:</strong> Initial reporting suggested DoD contracts awarded to 
           NIR LLC might indicate a shell company conducting experimental procedures. This claim was investigated and 
           <strong className="text-[var(--color-accent-blue)]"> debunked</strong> — NIR LLC is a legitimate medical practice owned by 
           <a href="https://drfsong.com/" target="_blank" rel="noopener noreferrer" className="source-link">Dr. Felix L. Song, MD</a>. 
           See the <strong>Investigative Addendum</strong> below for full details.
         </p>
+        <div className="divider" />
+        <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-3">
+          Sources: ICE Transfers to Honolulu
+        </h4>
+        <div className="space-y-2">
+          <SourceLink 
+            url="https://civilbeat.org/2025/07/ice-moving-immigrants-arrested-mainland-to-honolulu/"
+            title="Honolulu Civil Beat: ICE Is Moving Immigrants Arrested On The Mainland To Honolulu"
+          />
+          <SourceLink 
+            url="https://www.hawaiipublicradio.org/local-news/2025-12-18/ice-has-been-sending-immigrants-from-the-continental-u-s-to-hawaii-and-no-one-knows-why"
+            title="Hawaii Public Radio: ICE has been sending immigrants from the continental U.S. to Hawaii"
+          />
+          <SourceLink 
+            url="https://reason.com/2025/07/18/ice-is-shipping-detainees-to-hawaii-as-bed-space-on-the-u-s-mainland-fills-up/"
+            title="Reason: ICE is shipping detainees to Hawaii as bed space on the U.S. mainland fills up"
+          />
+          <SourceLink 
+            url="https://iljnetwork.org/ice-moves-immigrant-detainees-from-the-us-mainland-to-hawaii/"
+            title="Immigration Law Journal: ICE moves immigrant detainees from the US mainland to Hawaiʻi"
+          />
+          <SourceLink 
+            url="https://www.ice.gov/detain/detention-facilities/federal-detention-center-honolulu-fdc-honolulu"
+            title="ICE.gov: Federal Detention Center, Honolulu (FDC Honolulu)"
+          />
+        </div>
       </Card>
 
       <Card title="5. Regulatory Capture: DOGE and the FDA Firings" icon={<Icons.Warning size={24} />} variant="error">

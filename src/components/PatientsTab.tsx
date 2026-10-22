@@ -275,7 +275,7 @@ export default function PatientsTab() {
               <div className="divider" />
             )}
             {patient.notes && (
-              <p className="text-sm text-[var(--color-ink-light)]">{patient.notes}</p>
+              <p className="text-sm text-[var(--color-ink-light)]" dangerouslySetInnerHTML={{ __html: patient.notes }} />
             )}
           </div>
         ))}
