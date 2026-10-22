@@ -1,6 +1,10 @@
 import Card from './Card';
 
-export default function OverviewTab() {
+interface OverviewTabProps {
+  onTabChange: (tabId: string) => void;
+}
+
+export default function OverviewTab({ onTabChange }: OverviewTabProps) {
   return (
     <div className="space-y-6">
       {/* Hero Section */}
@@ -109,26 +113,38 @@ export default function OverviewTab() {
       {/* Quick Links */}
       <Card title="Quick Navigation" icon="🔗">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <a href="#trials" className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-colors">
+          <button 
+            onClick={() => onTabChange('trials')}
+            className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-blue-500/50 transition-all hover:scale-105 text-left w-full cursor-pointer"
+          >
             <div className="text-2xl mb-2">🧪</div>
             <div className="font-bold text-white mb-1">Clinical Trials</div>
             <div className="text-sm text-gray-400">Interactive site map with detailed documentation</div>
-          </a>
-          <a href="#patients" className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-purple-500/50 transition-colors">
+          </button>
+          <button 
+            onClick={() => onTabChange('patients')}
+            className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-purple-500/50 transition-all hover:scale-105 text-left w-full cursor-pointer"
+          >
             <div className="text-2xl mb-2">👥</div>
             <div className="font-bold text-white mb-1">Patient Registry</div>
             <div className="text-sm text-gray-400">All known patients and their outcomes</div>
-          </a>
-          <a href="#controversies" className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-red-500/50 transition-colors">
+          </button>
+          <button 
+            onClick={() => onTabChange('controversies')}
+            className="block p-4 bg-gray-800/50 rounded-lg border border-gray-700 hover:border-red-500/50 transition-all hover:scale-105 text-left w-full cursor-pointer"
+          >
             <div className="text-2xl mb-2">⚠️</div>
             <div className="font-bold text-white mb-1">Controversies</div>
             <div className="text-sm text-gray-400">Ethical concerns and investigations</div>
-          </a>
-          <a href="#circumstantial" className="block p-4 bg-amber-900/10 rounded-lg border border-amber-800/30 hover:border-amber-600 transition-colors">
+          </button>
+          <button 
+            onClick={() => onTabChange('circumstantial')}
+            className="block p-4 bg-amber-900/10 rounded-lg border border-amber-800/30 hover:border-amber-600 transition-all hover:scale-105 text-left w-full cursor-pointer"
+          >
             <div className="text-2xl mb-2">🔍</div>
             <div className="font-bold text-amber-400 mb-1">Circumstantial</div>
             <div className="text-sm text-gray-400">ICE detention connections (no direct evidence)</div>
-          </a>
+          </button>
         </div>
       </Card>
     </div>

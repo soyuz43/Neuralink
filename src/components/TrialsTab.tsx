@@ -25,20 +25,29 @@ export default function TrialsTab() {
                 <button
                   key={site.id}
                   onClick={() => setSelectedSite(site)}
-                  className={`w-full text-left rounded-lg p-3 border transition-all hover:scale-[1.02] ${
+                  className={`w-full text-left rounded-lg p-3 border transition-all hover:scale-[1.02] group cursor-pointer ${
                     site.id === 'dallas' 
                       ? 'bg-purple-900/20 border-purple-800/30 hover:border-purple-600'
                       : 'bg-gray-800/50 border-gray-700 hover:border-blue-500/50'
                   }`}
                 >
-                  <div className="font-bold text-white">{site.city}, {site.state}</div>
-                  <div className="text-sm text-gray-400">{site.facility}</div>
-                  <div className={`text-xs mt-1 ${
-                    site.id === 'dallas' ? 'text-purple-400' : 'text-blue-400'
-                  }`}>
-                    {site.trials.join(', ')} • First implant: {site.firstImplant}
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="font-bold text-white group-hover:underline">{site.city}, {site.state}</div>
+                      <div className="text-sm text-gray-400">{site.facility}</div>
+                      <div className={`text-xs mt-1 ${
+                        site.id === 'dallas' ? 'text-purple-400' : 'text-blue-400'
+                      }`}>
+                        {site.trials.join(', ')} • First implant: {site.firstImplant}
+                      </div>
+                      <div className="text-xs text-gray-500 mt-1">{site.description}</div>
+                    </div>
+                    <div className="text-gray-600 group-hover:text-blue-400 transition-colors ml-2">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
-                  <div className="text-xs text-gray-500 mt-1">{site.description}</div>
                 </button>
               ))}
             </div>
@@ -53,12 +62,21 @@ export default function TrialsTab() {
                 <button
                   key={site.id}
                   onClick={() => setSelectedSite(site)}
-                  className="w-full text-left bg-gray-800/50 rounded-lg p-3 border border-gray-700 hover:border-blue-500/50 transition-all hover:scale-[1.02]"
+                  className="w-full text-left bg-gray-800/50 rounded-lg p-3 border border-gray-700 hover:border-blue-500/50 transition-all hover:scale-[1.02] group cursor-pointer"
                 >
-                  <div className="font-bold text-white">{site.city}</div>
-                  <div className="text-sm text-gray-400">{site.facility}</div>
-                  <div className="text-xs text-blue-400 mt-1">
-                    {site.trials.join(', ')} • First implant: {site.firstImplant}
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="font-bold text-white group-hover:underline">{site.city}</div>
+                      <div className="text-sm text-gray-400">{site.facility}</div>
+                      <div className="text-xs text-blue-400 mt-1">
+                        {site.trials.join(', ')} • First implant: {site.firstImplant}
+                      </div>
+                    </div>
+                    <div className="text-gray-600 group-hover:text-blue-400 transition-colors ml-2">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
                 </button>
               ))}
@@ -72,12 +90,21 @@ export default function TrialsTab() {
                 <button
                   key={site.id}
                   onClick={() => setSelectedSite(site)}
-                  className="w-full text-left bg-gray-800/50 rounded-lg p-3 border border-gray-700 hover:border-blue-500/50 transition-all hover:scale-[1.02]"
+                  className="w-full text-left bg-gray-800/50 rounded-lg p-3 border border-gray-700 hover:border-blue-500/50 transition-all hover:scale-[1.02] group cursor-pointer"
                 >
-                  <div className="font-bold text-white">{site.city}, {site.state}</div>
-                  <div className="text-sm text-gray-400">{site.facility}</div>
-                  <div className="text-xs text-blue-400 mt-1">
-                    {site.trials.join(', ')} • First implant: {site.firstImplant}
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="font-bold text-white group-hover:underline">{site.city}, {site.state}</div>
+                      <div className="text-sm text-gray-400">{site.facility}</div>
+                      <div className="text-xs text-blue-400 mt-1">
+                        {site.trials.join(', ')} • First implant: {site.firstImplant}
+                      </div>
+                    </div>
+                    <div className="text-gray-600 group-hover:text-blue-400 transition-colors ml-2">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
                 </button>
               ))}
@@ -91,12 +118,21 @@ export default function TrialsTab() {
                 <button
                   key={site.id}
                   onClick={() => setSelectedSite(site)}
-                  className="w-full text-left bg-amber-900/20 rounded-lg p-3 border border-amber-800/30 hover:border-amber-600 transition-all hover:scale-[1.02]"
+                  className="w-full text-left bg-amber-900/20 rounded-lg p-3 border border-amber-800/30 hover:border-amber-600 transition-all hover:scale-[1.02] group cursor-pointer"
                 >
-                  <div className="font-bold text-white">{site.city}</div>
-                  <div className="text-sm text-gray-400">{site.facility}</div>
-                  <div className="text-xs text-amber-400 mt-1">
-                    {site.trials.join(', ')} • Regulatory concerns
+                  <div className="flex items-start justify-between">
+                    <div className="flex-1">
+                      <div className="font-bold text-white group-hover:underline">{site.city}</div>
+                      <div className="text-sm text-gray-400">{site.facility}</div>
+                      <div className="text-xs text-amber-400 mt-1">
+                        {site.trials.join(', ')} • Regulatory concerns
+                      </div>
+                    </div>
+                    <div className="text-gray-600 group-hover:text-amber-400 transition-colors ml-2">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
                 </button>
               ))}
@@ -139,6 +175,64 @@ export default function TrialsTab() {
                 <span><strong className="text-white">Strategic Partnership:</strong> Department of Health Abu Dhabi's direct involvement suggests government-level facilitation</span>
               </li>
             </ul>
+          </div>
+
+          <div className="border-t border-gray-700 pt-4 mt-4">
+            <h4 className="font-bold text-white mb-3">🏛️ UAE Regulatory Authority</h4>
+            <p className="text-sm text-gray-300 mb-3">
+              Neuralink's UAE-PRIME trial operates under the authority of the <strong className="text-white">Department of Health - Abu Dhabi (DOH)</strong>, 
+              the regulatory authority for research involving human participants in the Emirate of Abu Dhabi. At the federal level, 
+              the <strong className="text-white">Emirates Drug Establishment (EDE)</strong> regulates medical devices and pharmaceutical products.
+            </p>
+            
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 mb-3">
+              <h5 className="font-bold text-blue-400 text-sm mb-2">Key Regulatory Documents:</h5>
+              <ul className="space-y-2 text-xs">
+                <li>
+                  <a 
+                    href="https://www.doh.gov.ae/-/media/40B18D052C3E40B2A079ABD7571E2260.ashx" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 flex items-start gap-2"
+                  >
+                    <span className="text-gray-600">↗</span>
+                    <span>DOH Guidelines for Conducting Clinical Trials with Investigational Products and Medical Devices</span>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://ede.gov.ae/documents/61005/62137/Assessment+of+Medical+Products+for+Pharmacological+Research+and+Clinical+Studies+of+Drugs+-+Guidelines+for+Conducting+Clinical+Trials+with+Investigational+Products+and+Medical+Devices+2017/d2cd7244-088e-fc20-32fd-c1d3a1d3639f" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 flex items-start gap-2"
+                  >
+                    <span className="text-gray-600">↗</span>
+                    <span>EDE Guidelines for Clinical Trials with Medical Devices (Federal)</span>
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    href="https://www.aahrpp.org/docs/default-source/international-addenda/addendum-to-evaluation-instrument---uae.pdf" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-blue-400 hover:text-blue-300 flex items-start gap-2"
+                  >
+                    <span className="text-gray-600">↗</span>
+                    <span>UAE Abu Dhabi Addendum - AAHRPP (Research Ethics Standards)</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div className="text-xs text-gray-400">
+              <strong className="text-gray-300">What applies to Neuralink:</strong>
+              <ul className="mt-2 space-y-1 ml-4">
+                <li>• DOH approval required for all clinical trials involving human participants in Abu Dhabi</li>
+                <li>• Good Clinical Practice (GCP) standards must be followed</li>
+                <li>• Investigational medical devices require specific regulatory pathway</li>
+                <li>• Ethics committee review mandatory before trial initiation</li>
+              </ul>
+            </div>
           </div>
         </div>
       </Card>
