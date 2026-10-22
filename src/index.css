@@ -183,6 +183,12 @@ code, .mono, .metadata, .status-badge, .source-link {
   border-color: var(--color-ink);
 }
 
+.status-badge--verified-resolved {
+  color: var(--color-accent-blue);
+  background-color: #e4ecf4;
+  border-color: var(--color-accent-blue);
+}
+
 /* ============================================
    COMPONENT: SOURCE LINK
    ============================================ */
