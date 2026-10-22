@@ -1,19 +1,19 @@
-import { useState } from 'react';
+import { Icons } from './Icons';
 
 interface Tab {
   id: string;
   label: string;
-  icon: string;
+  icon: React.ComponentType<{ className?: string; size?: number }>;
 }
 
 const tabs: Tab[] = [
-  { id: 'overview', label: 'Overview', icon: '📋' },
-  { id: 'trials', label: 'Clinical Trials', icon: '🧪' },
-  { id: 'patients', label: 'Patients', icon: '👥' },
-  { id: 'controversies', label: 'Controversies', icon: '⚠️' },
-  { id: 'circumstantial', label: 'Circumstantial', icon: '🔍' },
-  { id: 'technology', label: 'Technology', icon: '🔬' },
-  { id: 'sources', label: 'Sources', icon: '📚' },
+  { id: 'overview', label: 'Overview', icon: Icons.Overview },
+  { id: 'trials', label: 'Clinical Trials', icon: Icons.Trials },
+  { id: 'patients', label: 'Patients', icon: Icons.Patients },
+  { id: 'controversies', label: 'Controversies', icon: Icons.Warning },
+  { id: 'circumstantial', label: 'Circumstantial', icon: Icons.Circumstantial },
+  { id: 'technology', label: 'Technology', icon: Icons.Technology },
+  { id: 'sources', label: 'Sources', icon: Icons.Sources },
 ];
 
 interface TabNavigationProps {
@@ -23,25 +23,25 @@ interface TabNavigationProps {
 
 export default function TabNavigation({ activeTab, onTabChange }: TabNavigationProps) {
   return (
-    <nav className="bg-gray-900 border-b border-gray-800 sticky top-0 z-40">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => onTabChange(tab.id)}
-              className={`flex items-center gap-2 px-4 py-3 text-sm font-medium whitespace-nowrap transition-all border-b-2 ${
-                activeTab === tab.id
-                  ? tab.id === 'circumstantial'
-                    ? 'text-amber-400 border-amber-400'
-                    : 'text-blue-400 border-blue-400'
-                  : 'text-gray-400 border-transparent hover:text-gray-200 hover:border-gray-600'
-              }`}
-            >
-              <span>{tab.icon}</span>
-              <span>{tab.label}</span>
-            </button>
-          ))}
+    <nav className="bg-paper border-b-[1.5px] border-[var(--color-ink)] sticky top-0 z-40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center gap-0 overflow-x-auto">
+          {tabs.map((tab) => {
+            const IconComponent = tab.icon;
+            const isActive = activeTab === tab.id;
+            const isCircumstantial = tab.id === 'circumstantial';
+            
+            return (
+              <button
+                key={tab.id}
+                onClick={() => onTabChange(tab.id)}
+                className={`nav-tab ${isActive ? 'nav-tab--active' : ''} ${isCircumstantial && isActive ? 'nav-tab--circumstantial' : ''}`}
+              >
+                <IconComponent size={18} />
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </nav>
