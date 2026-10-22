@@ -11,6 +11,7 @@ const tabs: Tab[] = [
   { id: 'trials', label: 'Clinical Trials', icon: '🧪' },
   { id: 'patients', label: 'Patients', icon: '👥' },
   { id: 'controversies', label: 'Controversies', icon: '⚠️' },
+  { id: 'circumstantial', label: 'Circumstantial', icon: '🔍' },
   { id: 'technology', label: 'Technology', icon: '🔬' },
   { id: 'sources', label: 'Sources', icon: '📚' },
 ];
@@ -31,7 +32,9 @@ export default function TabNavigation({ activeTab, onTabChange }: TabNavigationP
               onClick={() => onTabChange(tab.id)}
               className={`flex items-center gap-2 px-4 py-3 text-sm font-medium whitespace-nowrap transition-all border-b-2 ${
                 activeTab === tab.id
-                  ? 'text-blue-400 border-blue-400'
+                  ? tab.id === 'circumstantial'
+                    ? 'text-amber-400 border-amber-400'
+                    : 'text-blue-400 border-blue-400'
                   : 'text-gray-400 border-transparent hover:text-gray-200 hover:border-gray-600'
               }`}
             >

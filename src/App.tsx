@@ -4,6 +4,7 @@ import OverviewTab from './components/OverviewTab';
 import TrialsTab from './components/TrialsTab';
 import PatientsTab from './components/PatientsTab';
 import ControversiesTab from './components/ControversiesTab';
+import CircumstantialTab from './components/CircumstantialTab';
 import TechnologyTab from './components/TechnologyTab';
 import SourcesTab from './components/SourcesTab';
 
@@ -20,6 +21,8 @@ export default function App() {
         return <PatientsTab />;
       case 'controversies':
         return <ControversiesTab />;
+      case 'circumstantial':
+        return <CircumstantialTab />;
       case 'technology':
         return <TechnologyTab />;
       case 'sources':
