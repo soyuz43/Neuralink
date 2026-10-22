@@ -5,7 +5,7 @@
    ============================================ */
 
 :root {
-  /* Archival Color Palette */
+  /* Archival Color Palette - Light Mode */
   --color-desk: #e6e4df;
   --color-desk-dark: #dcd9d4;
   --color-paper: #f4f4f0;
@@ -33,6 +33,58 @@
   --shadow-base: 6px 6px 0px 0px var(--color-ink);
   --shadow-hover: 8px 8px 0px 0px var(--color-ink);
   --shadow-small: 3px 3px 0px 0px var(--color-ink);
+}
+
+/* Dark Mode - System Preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-desk: #121212;
+    --color-desk-dark: #1a1a1a;
+    --color-paper: #1e1e1e;
+    --color-paper-white: #252525;
+    --color-ink: #e6e4df;
+    --color-ink-light: #d0ccc7;
+    --color-ink-muted: #999999;
+    --color-accent-red: #ff4d4d;
+    --color-accent-red-light: #ff6666;
+    --color-accent-blue: #4da6ff;
+    --color-verified: #4ade80;
+    --color-verified-bg: #1a2e1a;
+    --color-mixed: #fbbf24;
+    --color-mixed-bg: #2e2a1a;
+    --color-unverified: #ff4d4d;
+    --color-unverified-bg: #2e1a1a;
+    --color-warning: #fbbf24;
+    --color-warning-bg: #2e2a1a;
+    --shadow-base: 6px 6px 0px 0px #000000;
+    --shadow-hover: 8px 8px 0px 0px #000000;
+    --shadow-small: 3px 3px 0px 0px #000000;
+  }
+}
+
+/* Dark Mode - Manual Toggle */
+.dark {
+  --color-desk: #121212;
+  --color-desk-dark: #1a1a1a;
+  --color-paper: #1e1e1e;
+  --color-paper-white: #252525;
+  --color-ink: #e6e4df;
+  --color-ink-light: #d0ccc7;
+  --color-ink-muted: #999999;
+  --color-accent-red: #ff4d4d;
+  --color-accent-red-light: #ff6666;
+  --color-accent-blue: #4da6ff;
+  --color-verified: #4ade80;
+  --color-verified-bg: #1a2e1a;
+  --color-mixed: #fbbf24;
+  --color-mixed-bg: #2e2a1a;
+  --color-unverified: #ff4d4d;
+  --color-unverified-bg: #2e1a1a;
+  --color-warning: #fbbf24;
+  --color-warning-bg: #2e2a1a;
+  --shadow-base: 6px 6px 0px 0px #000000;
+  --shadow-hover: 8px 8px 0px 0px #000000;
+  --shadow-small: 3px 3px 0px 0px #000000;
 }
 
 /* ============================================
@@ -541,22 +593,297 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 1.75rem;
+/* ============================================
+   RESPONSIVE & ACCESSIBILITY
+   ============================================ */
+
+/* Typography scaling with clamp() */
+h1 {
+  font-size: clamp(1.5rem, 4vw + 0.5rem, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 3vw + 0.5rem, 1.75rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 2vw + 0.5rem, 1.25rem);
+}
+
+/* Touch targets - minimum 44px */
+button,
+a,
+[role="button"] {
+  min-height: 44px;
+}
+
+/* Link overflow handling */
+.source-link {
+  word-break: break-all;
+  overflow-wrap: break-word;
+}
+
+/* ============================================
+   HAMBURGER MENU (Mobile < 768px)
+   ============================================ */
+
+.hamburger-btn {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-ink);
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger-btn:focus-visible {
+  outline: 3px solid var(--color-accent-red);
+  outline-offset: 2px;
+}
+
+.hamburger-line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-ink);
+  transition: all 0.2s ease-out;
+}
+
+.hamburger-line + .hamburger-line {
+  margin-top: 6px;
+}
+
+/* Hamburger animation when open */
+.hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn[aria-expanded="true"] .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile menu panel */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-paper);
+  border-bottom: 2px solid var(--color-ink);
+  box-shadow: var(--shadow-base);
+  z-index: 50;
+  padding: 1rem;
+  max-height: calc(100vh - 60px);
+  overflow-y: auto;
+}
+
+.mobile-menu--open {
+  display: block;
+}
+
+.mobile-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu__item {
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.mobile-menu__item:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  min-height: 44px;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.1s ease-out;
+}
+
+.mobile-menu__link:hover,
+.mobile-menu__link:focus-visible {
+  background-color: var(--color-desk-dark);
+}
+
+.mobile-menu__link--active {
+  color: var(--color-accent-red);
+  border-left: 3px solid var(--color-accent-red);
+  padding-left: calc(1rem - 3px);
+}
+
+/* More Menu Dropdown */
+.more-menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: var(--color-paper);
+  border: 1.5px solid var(--color-ink);
+  box-shadow: var(--shadow-base);
+  z-index: 100;
+  min-width: 200px;
+}
+
+.more-menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.more-menu__item {
+  border-bottom: 1px solid var(--color-ink);
+}
+
+.more-menu__item:last-child {
+  border-bottom: none;
+}
+
+.more-menu__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.875rem 1rem;
+  min-height: 44px;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+  text-decoration: none;
+  background: none;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: left;
+  transition: background-color 0.1s ease-out;
+}
+
+.more-menu__link:hover,
+.more-menu__link:focus-visible {
+  background-color: var(--color-desk-dark);
+}
+
+.more-menu__link--active {
+  color: var(--color-accent-red);
+  border-left: 3px solid var(--color-accent-red);
+  padding-left: calc(1rem - 3px);
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: 1.5px solid var(--color-ink);
+  cursor: pointer;
+  color: var(--color-ink);
+  transition: all 0.1s ease-out;
+}
+
+.theme-toggle:hover {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.theme-toggle:focus-visible {
+  outline: 3px solid var(--color-accent-red);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================ */
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+  /* Show hamburger, hide desktop nav */
+  .hamburger-btn {
+    display: flex;
   }
   
-  h2 {
-    font-size: 1.375rem;
+  .desktop-nav {
+    display: none;
   }
   
+  /* Reduce card padding */
   .dossier-card {
     padding: 1rem;
   }
   
-  .nav-tab {
-    padding: 0.75rem 0.875rem;
-    font-size: 0.75rem;
+  /* Reduce section header padding */
+  .section-header {
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
+  
+  /* Stack grids on mobile */
+  .grid {
+    gap: 1rem;
+  }
+  
+  /* Ensure touch targets */
+  .nav-tab {
+    min-height: 44px;
+  }
+  
+  /* Reduce modal padding on mobile */
+  .modal-body {
+    padding: 1rem;
+  }
+  
+  .modal-header {
+    padding: 1rem;
+  }
+  
+  /* Adjust disclaimer box */
+  .disclaimer-box {
+    padding: 1rem;
+  }
+  
+  /* Reduce interactive card padding */
+  .interactive-card {
+    padding: 0.75rem;
+  }
+}
+
+/* Tablet: 768px - 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .dossier-card {
+    padding: 1.25rem;
+  }
+}
+
+/* Desktop: > 1024px */
+@media (min-width: 1025px) {
+  /* Default styles apply */
 }
