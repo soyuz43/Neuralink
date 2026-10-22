@@ -30,7 +30,7 @@ export default function ControversiesTab() {
               GoFundMe Reality (June 2025)
             </h4>
             <p className="text-sm text-[var(--color-ink-light)]">
-              In the <strong className="text-[var(--color-ink)]">same month</strong>, a GoFundMe stated Mike was "not in a good place—mentally, 
+              In the <strong className="text-[var(--color-ink)]">same month</strong>, a <a href="https://www.gofundme.com/f/those-things-we-do-so-others-may-live" target="_blank" rel="noopener noreferrer" className="source-link">GoFundMe</a> stated Mike was "not in a good place—mentally, 
               financially, physically, or emotionally" and "He's ready to give up on life, people."
             </p>
           </div>
@@ -38,12 +38,14 @@ export default function ControversiesTab() {
 
         <div className="dossier-card dossier-card--compact dossier-card--no-hover mb-4">
           <h4 className="text-mono text-xs uppercase tracking-[0.05em] text-[var(--color-ink)] mb-3">
-            GoFundMe Details
+            <a href="https://www.gofundme.com/f/those-things-we-do-so-others-may-live" target="_blank" rel="noopener noreferrer" className="source-link">GoFundMe Details</a>
           </h4>
           <div className="grid md:grid-cols-2 gap-3 text-sm">
             <div className="metadata-row">
               <span className="metadata-row__label">Campaign</span>
-              <span className="metadata-row__value">"Those things we do, so others may live"</span>
+              <span className="metadata-row__value">
+                <a href="https://www.gofundme.com/f/those-things-we-do-so-others-may-live" target="_blank" rel="noopener noreferrer" className="source-link">"Those things we do, so others may live"</a>
+              </span>
             </div>
             <div className="metadata-row">
               <span className="metadata-row__label">Created</span>
