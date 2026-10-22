@@ -43,15 +43,26 @@ export default function AustinFacilityTab() {
           <p className="text-[var(--color-ink-light)] leading-relaxed mb-3">
             <strong className="text-[var(--color-ink)]">Note:</strong> Neuralink's mailing address (1701 Directors Blvd Ste 300, Austin, TX 78744) is a separate corporate office. The Del Valle facility is the actual manufacturing and research site.
           </p>
-          <a 
-            href="https://earth.google.com/web/search/2200+Caldwell+Lane,+Del+Valle,+TX+78617"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="source-link inline-flex items-center gap-2"
-          >
-            <Icons.ExternalLink size={14} />
-            View on Google Earth
-          </a>
+          <div className="flex flex-wrap gap-3">
+            <a 
+              href="https://www.google.com/maps/search/2200+Caldwell+Lane,+Del+Valle,+TX+78617"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="source-link inline-flex items-center gap-2"
+            >
+              <Icons.ExternalLink size={14} />
+              View on Google Maps
+            </a>
+            <a 
+              href="https://www.google.com/maps/@30.2204,-97.6547,17z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="source-link inline-flex items-center gap-2"
+            >
+              <Icons.ExternalLink size={14} />
+              Satellite View
+            </a>
+          </div>
         </div>
       </Card>
 
@@ -190,8 +201,8 @@ export default function AustinFacilityTab() {
             title="The Drey Dossier Part 6: The Neuralink Ranch"
           />
           <SourceLink 
-            url="https://earth.google.com/web/search/2200+Caldwell+Lane,+Del+Valle,+TX+78617"
-            title="Google Earth: 2200 Caldwell Lane, Del Valle, TX"
+            url="https://www.google.com/maps/search/2200+Caldwell+Lane,+Del+Valle,+TX+78617"
+            title="Google Maps: 2200 Caldwell Lane, Del Valle, TX"
           />
           <SourceLink 
             url="https://neuralink.com/careers/"
