@@ -10,8 +10,15 @@ const patients = [
     hospital: 'Barrow Neurological Institute',
     study: 'PRIME',
     status: 'Publicly active',
-    notes: 'First Neuralink patient. Reported 85% thread retraction at one month, resolved via software updates.',
+    notes: 'First Neuralink patient. Experienced significant thread retraction (85% of threads) within weeks of implant. Neuralink stated software modifications improved performance, and by July 2024 the threads had become stable. Neuralink changed surgical procedures for subsequent patients. Limited public information since mid-2025.',
     featured: true,
+    sources: [
+      { title: 'Neuralink: Two Years of Telepathy Updates', url: 'https://neuralink.com/updates/two-years-of-telepathy/' },
+      { title: 'NBC News: Implant suffers setback after threads retract', url: 'https://www.nbcnews.com/science/science-news/implant-elon-musks-neuralink-suffers-setback-threads-retract-patients-rcna151443' },
+      { title: 'Reuters: Neuralink has faced issues with its tiny wires for years', url: 'https://www.reuters.com/technology/musks-neuralink-has-faced-issues-with-its-tiny-wires-years-sources-say-2024-05-15/' },
+      { title: 'Fortune: Neuralink participant says life changed 18 months post-surgery', url: 'https://fortune.com/2025/08/23/neuralink-participant-1-noland-arbaugh-18-months-post-surgery-life-changed-elon-musk/' },
+      { title: 'Noland Arbaugh - Wikipedia', url: 'https://en.wikipedia.org/wiki/Noland_Arbaugh' },
+    ],
   },
   {
     id: 2,
@@ -21,8 +28,12 @@ const patients = [
     hospital: 'Barrow Neurological Institute',
     study: 'PRIME, CONVOY',
     status: 'Controlling robot arm',
-    notes: 'Procedure modifications to reduce brain motion and place implant closer to surface.',
+    notes: 'Second Neuralink patient. Procedure modifications were made to reduce brain motion and place the implant closer to the surface following thread retraction issues with Patient 1. Demonstrated control of robotic arm using thought.',
     featured: false,
+    sources: [
+      { title: 'Neuralink: Two Years of Telepathy Updates', url: 'https://neuralink.com/updates/two-years-of-telepathy/' },
+      { title: 'NeuraPod: Alex Conley Patient Profile', url: 'https://www.neurapod.com/neuralink-patients/alex-conley' },
+    ],
   },
   {
     id: 3,
@@ -32,8 +43,12 @@ const patients = [
     hospital: 'Barrow Neurological Institute',
     study: 'PRIME',
     status: 'First ALS patient',
-    notes: 'First ALS patient. Featured in Neuralink promotional materials.',
+    notes: 'First ALS patient to receive Neuralink implant. Featured in Neuralink promotional materials demonstrating device capabilities.',
     featured: true,
+    sources: [
+      { title: 'Neuralink: Two Years of Telepathy Updates', url: 'https://neuralink.com/updates/two-years-of-telepathy/' },
+      { title: 'NeuraPod: Brad Smith Patient Profile', url: 'https://www.neurapod.com/neuralink-patients/brad-smith' },
+    ],
   },
   {
     id: 4,
@@ -43,9 +58,15 @@ const patients = [
     hospital: 'Barrow Neurological Institute',
     study: 'PRIME',
     status: 'GoFundMe crisis',
-    notes: 'Featured in Neuralink promotional video. GoFundMe created 4 months post-surgery stating he was "ready to give up on life." Shivon Zilis donated $3,000.',
+    notes: 'Featured in Neuralink promotional video discussing full-time work capability. Four months post-surgery (June 2025), a GoFundMe was created by gaming friend Ryan Biggs stating Mike was "not in a good place—mentally, financially, physically, or emotionally" and "ready to give up on life." Campaign raised over $21,000. Shivon Zilis (Neuralink Director of Operations) donated $3,000. Family has stated his absence from social media is due to ALS progression and privacy, not corporate cover-up. No public social media presence.',
     featured: true,
     controversy: true,
+    sources: [
+      { title: 'GoFundMe: "Those things we do, so others may live"', url: 'https://www.gofundme.com/f/those-things-we-do-so-others-may-live' },
+      { title: 'The Drey Dossier: Part 4 - Where TF Is Patient Four?', url: 'https://thedreydossier.substack.com/p/who-tf-is-in-my-head-part-4-where' },
+      { title: 'NeuraPod: Mike Melgarejo Patient Profile', url: 'https://www.neurapod.com/neuralink-patients/mike-melgarejo' },
+      { title: 'Distractify: What Happened to Neuralink Patient 4?', url: 'https://www.distractify.com/p/what-happened-to-neuralink-patient-4' },
+    ],
   },
   {
     id: 5,
@@ -55,8 +76,11 @@ const patients = [
     hospital: 'University of Miami Health',
     study: 'PRIME, CONVOY',
     status: 'Limited information',
-    notes: 'First patient at University of Miami site.',
+    notes: 'First patient at University of Miami site. Part of the expansion to Miami facility.',
     featured: false,
+    sources: [
+      { title: 'NeuraPod: RJ Tanner Patient Profile', url: 'https://www.neurapod.com/neuralink-patients/rj-tanner' },
+    ],
   },
   {
     id: 6,
@@ -66,8 +90,11 @@ const patients = [
     hospital: 'Barrow Neurological Institute',
     study: 'PRIME',
     status: 'Limited information',
-    notes: '',
+    notes: 'Implanted at Barrow Neurological Institute. Limited public information available.',
     featured: false,
+    sources: [
+      { title: 'NeuraPod: Rob Greiner Patient Profile', url: 'https://www.neurapod.com/neuralink-patients/rob-greiner' },
+    ],
   },
   {
     id: 7,
@@ -77,8 +104,11 @@ const patients = [
     hospital: 'Barrow Neurological Institute',
     study: 'PRIME, CONVOY',
     status: 'Limited information',
-    notes: 'Also referred to as "Patient 7" in VOICE trial demonstrations.',
+    notes: 'Also referred to as "Patient 7" in VOICE trial demonstrations. Demonstrated speech decoding capabilities.',
     featured: false,
+    sources: [
+      { title: 'NeuraPod: Jake Schneider Patient Profile', url: 'https://www.neurapod.com/neuralink-patients/jake-schneider' },
+    ],
   },
   {
     id: 8,
@@ -88,8 +118,12 @@ const patients = [
     hospital: 'University of Miami Health',
     study: 'PRIME, CONVOY',
     status: 'Feeding himself',
-    notes: 'First patient to feed himself unassisted with implant.',
+    notes: 'First patient to feed himself unassisted with the Neuralink implant. Demonstrated significant functional improvement post-implant.',
     featured: true,
+    sources: [
+      { title: 'Neuralink: Two Years of Telepathy Updates', url: 'https://neuralink.com/updates/two-years-of-telepathy/' },
+      { title: 'NeuraPod: Nick Wray Patient Profile', url: 'https://www.neurapod.com/neuralink-patients/nick-wray' },
+    ],
   },
   {
     id: 9,
@@ -99,8 +133,12 @@ const patients = [
     hospital: 'University of Miami Health',
     study: 'PRIME',
     status: 'First woman',
-    notes: 'First female patient. Publicly active with updates.',
+    notes: 'First female patient to receive Neuralink implant. Publicly active with social media updates about her experience.',
     featured: true,
+    sources: [
+      { title: 'Neuralink: Two Years of Telepathy Updates', url: 'https://neuralink.com/updates/two-years-of-telepathy/' },
+      { title: 'NeuraPod: Audrey Crews Patient Profile', url: 'https://www.neurapod.com/neuralink-patients/audrey-crews' },
+    ],
   },
   {
     id: 13,
