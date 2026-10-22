@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/', // For user/org pages (username.github.io). For project sites, use '/<repo-name>/'
+  base: '/Neuralink/', // Project site path - must match repository name
   server: {
     host: "0.0.0.0",
     port: 3000,
