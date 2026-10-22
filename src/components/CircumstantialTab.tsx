@@ -173,17 +173,28 @@ export default function CircumstantialTab() {
         </p>
       </Card>
 
-      <Card title="4. The Honolulu Pipeline: FDC Honolulu, NIR LLC" icon={<Icons.Warning size={24} />} variant="error">
-        <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-mixed-bg)] mb-4">
-          <span className="status-badge status-badge--mixed">⚠ Mixed (Verified Contracts | Speculative Link)</span>
+      <Card title="4. ICE Transfers to Honolulu: FDC Honolulu" icon={<Icons.Warning size={24} />} variant="warning">
+        <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[var(--color-verified-bg)] mb-4">
+          <span className="status-badge status-badge--verified">✓ Verified</span>
           <p className="text-sm text-[var(--color-ink-light)] mt-2">
-            Contracts and transfers verified. Link to Neuralink is speculative.
+            ICE detainee transfers to Honolulu verified. NIR LLC claim resolved (see addendum below).
           </p>
         </div>
-        <p className="text-sm text-[var(--color-ink-light)]">
-          ICE began transferring mainland detainees to FDC Honolulu in mid-2025. Concurrently, DoD awarded contracts for 
-          "neurological surgery procedures" to NIR LLC, an obscure Honolulu-based firm with no public web presence.
+        <p className="text-sm text-[var(--color-ink-light)] mb-3">
+          In mid-2025, ICE began transferring mainland detainees to the Federal Detention Center (FDC) in Honolulu, Hawaii. 
+          These transfers moved detainees approximately 4,500 miles from their original arrest locations, raising concerns 
+          about access to legal representation and oversight.
         </p>
+        <div className="dossier-card dossier-card--compact dossier-card--no-hover bg-[#e4ecf4]">
+          <p className="text-sm text-[var(--color-ink-light)]">
+            <strong className="text-[var(--color-accent-blue)]">Note on NIR LLC:</strong> Initial reporting raised questions 
+            about Department of Defense contracts awarded to NIR LLC, a Honolulu-based entity. However, verification through 
+            Hawaii state business registries and medical licensing directories confirmed that NIR LLC is a legitimate 
+            professional billing entity for Dr. Felix L. Song, MD, a board-certified Interventional Neuroradiologist. 
+            The LLC has been registered since May 2005 and provides standard neurointerventional services to the military. 
+            See the <strong>Investigative Addendum</strong> below for full verification details and source links.
+          </p>
+        </div>
       </Card>
 
       <Card title="5. Regulatory Capture: DOGE and the FDA Firings" icon={<Icons.Warning size={24} />} variant="error">
